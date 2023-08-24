@@ -29,30 +29,63 @@ header{
     font-size: 1.3rem;
 }
 h2{
+color: #F5CB86;
+}
+
+a{
     color: #F5CB86;
     position: relative;
+    font-size: 20px;
+    text-decoration: none;
   
 }
-h2:before {
-    content: ' ';
-  background: #F5CB86;
-  display: block;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
-}
-h2:hover{
-    background-position: 0;
-}
-h2:hover:before{
+a:before {
+    content: '';
+    position: absolute;
     width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #F5CB86;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+a:hover:before{
+    transform-origin: left;
+  transform: scaleX(1);
 }
 
 main{
     width: 100%;
     height: 90%;
     background-color: #051622;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+#langding-page{
+    display:  flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#photo-on-the-left{
+    width: 40%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+#photo-on-the-left.img{
+    width: 80%;
+    height: 80%;
+}
+#text-on-the-right{
+    width: 40%;
+    height: 80%;
 }
