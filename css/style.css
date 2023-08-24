@@ -67,10 +67,10 @@ main{
     width: 10px;
 }
 
-#langding-page{
+#landing-page{
     display:  flex;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     justify-content: center;
     align-items: center;
 }
@@ -87,5 +87,27 @@ main{
 }
 #text-on-the-right{
     width: 40%;
-    height: 80%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+     flex-direction: column;
+} 
+#text1{
+    width: 50%;
+    height: 30%;
+}
+#text2{
+    width: 60%;
+    height: 50%;
+}
+#text-on-the-right h3{
+    font-size:  4rem;
+    color: #F5CB86;
+    font-family: "Cormorant Garamond";
+    margin-bottom: 10px;
+}
+#text-on-the-right p {
+    color: #F5CB86;
+    font-family: "Cormorant Garamond";
+    font-size: 3rem;
 }
