@@ -27,6 +27,7 @@ header{
     align-items: center;
     font-family: 'Cormorant Garamond', serif; ;
     font-size: 1.3rem;
+    scroll-behavior: smooth;
 }
 h2{
 color: #F5CB86;
@@ -113,4 +114,91 @@ main{
     font-family: "Cormorant Garamond";
     font-size: 3rem;
 }
-
+#projects{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+#first-box{
+    grid-area: 1 / 2 / 2 / 4;
+    width: 80%;
+    height: 80%;
+    background-color: aliceblue;
+    align-self: center;
+    justify-self: center;
+    border-radius: 15px;
+}
+#second-box{
+    grid-area: 1 / 4 / 2 / 5;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
+#third-box{
+    grid-area: 1 / 5 / 2 / 7;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
+#fourth-box{
+    grid-area: 2 / 2 / 3 / 3;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: right;
+    align-self: center;
+    border-radius: 15px;
+}
+#fifth-box{
+    grid-area: 3 / 2 / 4 / 3;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: right;
+    align-self: center;
+    border-radius: 15px;
+}
+#sixth-box{
+    grid-area: 2 / 3 / 4 / 5;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
+#seventh-box{
+    grid-area: 2 / 5 / 3 / 6;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
+#eighth-box{
+    grid-area: 2 / 6 / 3 / 7;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
+#ninth-box{
+    grid-area: 3 / 5 / 4 / 7;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 15px;
+}
