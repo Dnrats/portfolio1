@@ -36,15 +36,17 @@
         </section>
         <section id="contact">
             <div id="left-part-contact">
-                <form onsubmit="return false">
-                    <div>
+                    <div id="contact-title">
                         <h2>Contact</h2>
                     </div>
-                    <input type="text" placeholder="Name" id="Name">
-                    <input type="email" placeholder="Email" id="Email">
-                    <textarea id="Message" cols="10" rows="20"></textarea>
-                    <button onclick="sendContact();">Send</button>
-                </form>
+                    <div id="contact-fields">
+                        <form action="">
+                            <input type="text" placeholder="Name" id="Name">
+                            <input type="email" placeholder="Email" id="Email">
+                            <textarea id="Message" cols="20" rows="10"></textarea>
+                            <button >Send</button>
+                        </form>
+                    </div>
             </div>
             <div id="right-part-social"></div>
         </section>
