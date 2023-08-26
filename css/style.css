@@ -28,6 +28,10 @@ nav{
 #left-part-logo{
     width: 50%;
     height: 100%;
+    color: #F5CB86;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
 }
 #right-part-menu{
     width: 50%;
