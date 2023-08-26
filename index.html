@@ -41,7 +41,7 @@
                         <h2>Contact</h2>
                     </div>
                     <div id="contact-fields">
-                        <form action="">
+                        <form onsubmit="sendEmail(); reset(); return false">
                             <input type="text" placeholder="Name" id="Name">
                             <input type="email" placeholder="E-mail" id="Email">
                             <textarea placeholder="Message" id="Message" cols="20" rows="10"></textarea>
@@ -63,8 +63,8 @@
 
     </main>
 
-    
-
+  <script src="/js/contact.js"></script>  
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="/js/script.js"></script>    
 </body>
 </html>
