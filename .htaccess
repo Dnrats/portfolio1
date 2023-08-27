@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^dnrats.com [NC]
+RewriteRule ^(.*)$ https://www.dnrats.com/$1 [L,R=301,NC]
+</IfModule>
+# 
