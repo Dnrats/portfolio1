@@ -1,0 +1,125 @@
+@media only screen and (max-width: 1400px){
+
+    #photo-on-the-left {
+        width: 50%;
+        height: 70%;
+        }
+        #photo-on-the-left img{
+            width: 55%;
+        }
+        #text-on-the-right {
+            width: 40%;
+            height: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+        } 
+        #text1 {
+            width: 80%;
+            height: 30%;
+            text-shadow: 1px 1px 2px black;
+        }
+        #text-on-the-right h3{
+            width: 100%;
+        }
+        #text2 {
+            width: 100%;
+            height: 50%;
+            text-shadow: 1px 1px 2px black;
+        }
+        #left-part-logo{
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #projects{
+            width: 100vw;
+            height: 90vh;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        #first-box{
+            grid-area: 1 / 1 / 2 / 3 ;
+        }
+        #second-box{
+            grid-area: 1 / 3 / 2 / 4;
+        }
+        #third-box{
+            grid-area: 1 / 4 / 2 / 6;
+        }
+        #fourth-box{
+            grid-area: 2 / 1 / 3 / 2;
+        }
+        #fifth-box{
+            grid-area: 3 / 1 / 4 / 2;
+        }
+        #sixth-box{
+            grid-area: 2 / 2 / 4 / 4;
+        }
+        #seventh-box{
+            grid-area: 2 / 4 / 3 / 5;
+        }
+        #eighth-box{
+            grid-area: 2 / 5 / 3 / 6;
+        }
+        #ninth-box{
+            grid-area: 3 / 4 / 4 / 6;
+        }
+        #right-part-social{
+            width: 50%;
+            height: 80%;
+        }
+        #feedback{
+            width: 80%;
+            height: 20%;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        #feedback p{
+            font-size: 2.5rem;
+        }
+        #left-part-contact{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+          }
+        form{
+            width: 100%;
+            height: 100%;
+        }
+        form :nth-child(1){
+            width: 50%;
+        }
+        form :nth-child(2){
+            width: 50%
+        }
+        form :nth-child(3){
+            width: 60%;
+        }
+        #Send{
+            width: 40%
+        }
+        #contact-title{
+        display: flex;
+        
+        }
+        #contact-fields{
+            display: flex;
+            justify-content: space-evenly;
+            height: 80%;
+            width: 70%;
+            
+        }
+        #icons{
+            width: 70%;
+            height: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+};
