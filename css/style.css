@@ -74,7 +74,7 @@ main{
     width: 100%;
     height: 90%;
     background-color: #051622;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 }
 main::-webkit-scrollbar{
@@ -380,6 +380,7 @@ input, select, textarea {
 }
 .fa-brands{
     color: #F5CB86;
+    font-size: 5rem;
     
 }
 #feedback{
@@ -398,6 +399,53 @@ input, select, textarea {
     align-items: center;
 }
 
-
-/* PHONES */
+/* #Send{
+    border: 2px solid #4388FF;
+    background-color: transparent;
+    height: 60px;
+    line-height: 20px;
+    color: #4388FF;
+    padding: 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 200px;
+    font-size: 20px;
+    transition: all 200ms ease-in-out; }
+    input[role="send"]:focus {
+      outline: 0; }
+    input[role="send"]:hover {
+      background-color: #4388FF;
+      color: #fff;
+      outline: 0; }
+    input[role="send"]:active {
+      font-size: 24px;
+      outline: 0; }
+    input[role="send"].clicked {
+      color: transparent;
+      background-color: transparent;
+      width: 60px;
+      border-width: 5px;
+      border-color: #ddd;
+      animation: turn-send 5s linear;
+      border-top-color: #4388FF; }
+    input[role="send"].done, input[role="send"].done:hover {
+      background-color: #4388FF;
+      color: #fff;
+      font-family: 'FontAwesome';
+      font-size: 40px;
+      position: relative; }
+  
+  @keyframes turn-send {
+    10% {
+      transform: rotateZ(0deg); }
+    55% {
+      transform: rotatez(360deg); }
+    99% {
+      transform: rotateZ(720deg);
+      background-color: transparent;
+      border-color: #ddd;
+      border-top-color: #4388FF; }
+    100% {
+      border-color: #4388FF;
+      background-color: #4388FF; } } */
 
