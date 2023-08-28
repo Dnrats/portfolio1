@@ -2,7 +2,6 @@
 *{
     margin: 0;
     padding: 0;
-    overflow-y: auto;
     scroll-behavior: smooth;
 }
 body{
@@ -75,15 +74,21 @@ main{
     width: 100%;
     height: 90%;
     background-color: #051622;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
-::-webkit-scrollbar {
+main::-webkit-scrollbar{
     width: 10px;
+    overflow-y: auto;
 }
-::-webkit-scrollbar-thumb{
-    color: #F5CB86;
+main::-webkit-scrollbar-track{
+    border-radius: 10px;
 }
-
-
+    main::-webkit-scrollbar-thumb{
+    background-color: #F5CB86;
+    border-radius: 10px;
+    height: 20px;
+}
 #landing-page {
     display:  flex;
     width: 100vw;

@@ -10,7 +10,7 @@ header{
     display: flex;
  } 
 #right-part-menu{
-    display: hidden;
+    display: none;
     width: 0;
 }
 #left-part-logo{
@@ -132,12 +132,12 @@ width: 100%;
 }
 #icons{
     width: 100%;
-    height: 30%;
+    height: 40%;
     display: flex;
     justify-content: space-evenly;
 }
 .fa-brands{
-    font-size: 3.2rem;
+    font-size: 3rem;
 }
 #left-part-contact{
     width: 100%;
@@ -149,16 +149,17 @@ width: 100%;
 }
 #contact-title{
     width: 80%;
-    height: 10%;
+    height: 15%;
     display: flex;
     margin-left: 75px;
     font-size: 2.5rem;
-    font-family: 'Cormorant Garamond';
+    
 }
 #contact-title h2{
     font-style: italic;
     font-size: 4rem;
     text-shadow: 1px 1px 2px black;
+    width: 100%;
 }
 #contact-fields{
     width: 100%;
@@ -196,7 +197,7 @@ form * {
     border-color: #F5CB86
 }
 #Send{
-width: 40%;
-height: 15%;
+    width: 40%;
+    height: 15%;
 }
 }
