@@ -5,13 +5,15 @@
     scroll-behavior: smooth;
 }
 body{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 header{
-    width: 100vw;
+    width: 100%;
     height: 10vh;
     background-color: #051622;  
     display: flex;
@@ -72,7 +74,7 @@ a:hover:before{
 
 main{
     width: 100%;
-    height: 90%;
+    height: 85%;
     background-color: #051622;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -104,11 +106,11 @@ main::-webkit-scrollbar-track{
     align-items: center;
     }
 #photo-on-the-left img {
-    background-color: white;
-    width: 50%;
-    height: 60%;
+    width: 60%;
+    height: 70%;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: #F5CB86 1px solid;
 }
 #text-on-the-right {
     width: 40%;
@@ -117,7 +119,7 @@ main::-webkit-scrollbar-track{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin-left: 10vw;
+    margin-left: 10%;
 } 
 #text1 {
     width: 50%;
@@ -398,7 +400,13 @@ input, select, textarea {
     justify-content: space-around;
     align-items: center;
 }
-
+footer{
+    width: 100%;
+    height: 5vh;
+    background-color: #051622;
+    margin: 0;
+    padding: 0;
+}
 /* #Send{
     border: 2px solid #4388FF;
     background-color: transparent;
