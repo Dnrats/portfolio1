@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Signika:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/medio');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Signika:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -35,6 +34,7 @@ nav{
     font-family: 'Medio', sans-serif;
     margin-left: 5%;
 }
+
 #right-part-menu{
     width: 50%;
     height: 100%;
@@ -424,53 +424,4 @@ footer div{
 footer img{
     width: 40px;
 }
-/* #Send{
-    border: 2px solid #4388FF;
-    background-color: transparent;
-    height: 60px;
-    line-height: 20px;
-    color: #4388FF;
-    padding: 0;
-    width: 200px;
-    text-align: center;
-    border-radius: 200px;
-    font-size: 20px;
-    transition: all 200ms ease-in-out; }
-    input[role="send"]:focus {
-      outline: 0; }
-    input[role="send"]:hover {
-      background-color: #4388FF;
-      color: #fff;
-      outline: 0; }
-    input[role="send"]:active {
-      font-size: 24px;
-      outline: 0; }
-    input[role="send"].clicked {
-      color: transparent;
-      background-color: transparent;
-      width: 60px;
-      border-width: 5px;
-      border-color: #ddd;
-      animation: turn-send 5s linear;
-      border-top-color: #4388FF; }
-    input[role="send"].done, input[role="send"].done:hover {
-      background-color: #4388FF;
-      color: #fff;
-      font-family: 'FontAwesome';
-      font-size: 40px;
-      position: relative; }
-  
-  @keyframes turn-send {
-    10% {
-      transform: rotateZ(0deg); }
-    55% {
-      transform: rotatez(360deg); }
-    99% {
-      transform: rotateZ(720deg);
-      background-color: transparent;
-      border-color: #ddd;
-      border-top-color: #4388FF; }
-    100% {
-      border-color: #4388FF;
-      background-color: #4388FF; } } */
 
