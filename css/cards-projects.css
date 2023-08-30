@@ -36,12 +36,24 @@
 	 transform-style: preserve-3d;
 	 border-radius: 10px;
 }
- .front .inner, .back .inner {
+ .front, .back{
 	 height: 100%;
      width: 100%;
-	 display: grid;
-	 padding: 1.5em;
 	 transform: translateZ(80px) scale(0.94);
+}
+.inner{
+    height: 100%;
+    width: 100%;
+    transform: translateZ(80px) scale(0.94);
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inner h2{
+    display: flex;
+    justify-content: center;
+
 }
  .front {
 	 background-color: #F5CB86;
@@ -58,14 +70,12 @@
 	 display: block;
 	 border-radius: 6px;
 	 backface-visibility: hidden;
-	 background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
+     background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
 }
  .front .inner {
-	 grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
 	 justify-items: center;
 }
  .front h2 {
-	 grid-row: 2;
 	 margin-bottom: 0.3em;
 	 text-transform: uppercase;
 	 letter-spacing: 3px;
@@ -76,7 +86,6 @@
      font-style: italic;
 }
  .front .rating {
-	 grid-row: 3;
 	 color: rgba(255, 255, 255, 0.8);
 	 font-size: 14px;
 	 display: flex;
@@ -84,12 +93,9 @@
 }
  .back {
 	 transform: rotateY(180deg);
-	 background-color: #F5CB86;
+     background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
 }
- .back .inner {
-	 grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
-	 grid-template-columns: repeat(4, auto);
-	 grid-column-gap: 0.8em;
+ .back {
 	 justify-items: center;
 }
  .back .info {
@@ -97,7 +103,6 @@
 	 display: flex;
 	 align-items: center;
 	 color: #ffffff;
-	 grid-row: 3;
 }
  .back .info:not(:first-of-type):before {
 	 content: '';
@@ -116,34 +121,13 @@
 	 -webkit-background-clip: text;
 }
  .back .description {
-	 grid-row: 5;
-	 grid-column: -1;
-	 font-size: 0.86em;
+	 font-size: 1em;
 	 font-weight: 600;
-	 line-height: 1em;
-	 overflow: auto;
+	 line-height: 1.5em;
+	 overflow-y: auto;
 	 color: #051622;
 }
- .back .location, .back .price {
-	 font-weight: 600;
-	 color: #355cc9;
-	 grid-row: 1;
-	 font-size: 0.86em;
-}
- .back .location {
-	 grid-column: 0.3333333333;
-	 justify-self: left;
-}
- .back .price {
-	 grid-column: -3;
-	 justify-self: right;
-}
- .back .button {
-	 grid-column: -1;
-	 justify-self: center;
-}
  .button {
-	 grid-row: -1;
 	 text-transform: uppercase;
 	 letter-spacing: 1px;
 	 font-weight: 3em;
@@ -152,7 +136,7 @@
 	 padding: 0 1.5em;
 	 height: 3em;
 	 line-height: 2.9em;
-	 min-width: 3em;
+     width: 50%;
 	 background-color: transparent;
 	 border: solid 2px #051622;
 	 color: #051622;
@@ -169,15 +153,9 @@
 }
  .button.return {
 	 line-height: 3em;
-	 color: #355cc9;
-	 border-color: #355cc9;
-	 text-shadow: none;
+	 color: #051622;
+	 border-color: #051622;
 }
  .button.return:hover {
-	 background-color: #355cc9;
-	 color: #fff;
-	 box-shadow: none;
-}
- ::-webkit-scrollbar {
-	 width: 5px;
+	 box-shadow: #ffffff;
 }
