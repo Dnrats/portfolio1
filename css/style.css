@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Signika:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/medio');
 *{
     margin: 0;
     padding: 0;
@@ -9,8 +10,6 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 header{
     width: 100%;
@@ -33,6 +32,8 @@ nav{
     display: flex;
     align-items: center;
     font-size: 2rem;
+    font-family: 'Medio', sans-serif;
+    margin-left: 5%;
 }
 #right-part-menu{
     width: 50%;
@@ -45,6 +46,8 @@ nav{
 }
 h2{
 color: #F5CB86;
+font-family: 'Cormorant Garamond';
+font-style: italic;
 }
 
 a{
@@ -74,7 +77,7 @@ a:hover:before{
 
 main{
     width: 100%;
-    height: 85%;
+    height: 90%;
     background-color: #051622;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -107,10 +110,9 @@ main::-webkit-scrollbar-track{
     }
 #photo-on-the-left img {
     width: 60%;
-    height: 70%;
+    height: 80%;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border: #F5CB86 1px solid;
 }
 #text-on-the-right {
     width: 40%;
@@ -136,11 +138,13 @@ main::-webkit-scrollbar-track{
     color: #F5CB86;
     font-family: "Cormorant Garamond";
     margin-bottom: 10px;
+    font-style: italic;
 }
 #text-on-the-right p {
     color: #F5CB86;
     font-family: "Cormorant Garamond";
     font-size: 3rem;
+    font-style: italic;
 }
 #projects{
     width: 100vw;
@@ -276,6 +280,7 @@ main::-webkit-scrollbar-track{
     font-family: 'Cormorant Garamond';
 }
 #contact-title h2{
+    font-family: 'Cormorant Garamond';
     font-style: italic;
     font-size: 72px;
     text-shadow: 1px 1px 2px black;
@@ -375,7 +380,6 @@ textarea:-moz-placeholder {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    
 }
 input, select, textarea {
     color: #F5CB86;
@@ -390,6 +394,7 @@ input, select, textarea {
     height: 35%;
     color: #F5CB86;
     font-family: 'Cormorant Garamond';
+    font-style: italic;
     font-size: 3rem;
     margin-top: 50px;
 }
@@ -402,10 +407,22 @@ input, select, textarea {
 }
 footer{
     width: 100%;
-    height: 5vh;
+    height: 5%;
     background-color: #051622;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer div{
+    color: #F5CB86;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer img{
+    width: 40px;
 }
 /* #Send{
     border: 2px solid #4388FF;
