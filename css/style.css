@@ -30,8 +30,6 @@ nav{
     color: #F5CB86;
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    font-family: 'Medio', sans-serif;
     margin-left: 5%;
 }
 
@@ -41,7 +39,6 @@ nav{
     display: flex;
     justify-content: right;
     align-items: center;
-    font-family: 'Cormorant Garamond', serif; ;
     font-size: 1.3rem;
 }
 h2{
