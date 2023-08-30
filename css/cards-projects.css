@@ -84,8 +84,7 @@
 }
  .back {
 	 transform: rotateY(180deg);
-	 background-color: #fff;
-	 border: 2px solid #f0f0f0;
+	 background-color: #F5CB86;
 }
  .back .inner {
 	 grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
@@ -97,7 +96,7 @@
 	 position: relative;
 	 display: flex;
 	 align-items: center;
-	 color: #355cc9;
+	 color: #ffffff;
 	 grid-row: 3;
 }
  .back .info:not(:first-of-type):before {
@@ -108,38 +107,22 @@
 	 width: 1px;
 	 background-color: #ccc;
 }
- .back .info span {
-	 font-size: 2em;
-	 font-weight: 700;
-}
  .back .info i {
-	 font-size: 1.2em;
+	 font-size: 3em;
 }
  .back .info i:before {
-	 background: linear-gradient(40deg, #355cc9, #438af3);
+	 background: #051622;
 	 -webkit-text-fill-color: transparent;
 	 -webkit-background-clip: text;
-}
- .back .info .icon {
-	 margin-left: 0.3em;
-}
- .back .info .icon span {
-	 display: block;
-	 margin-top: -0.25em;
-	 font-size: 0.8em;
-	 font-weight: 600;
-	 white-space: nowrap;
 }
  .back .description {
 	 grid-row: 5;
 	 grid-column: -1;
 	 font-size: 0.86em;
-	 border-radius: 5px;
 	 font-weight: 600;
-	 line-height: 1.4em;
+	 line-height: 1em;
 	 overflow: auto;
-	 color: #355cc9;
-	 padding-right: 10px;
+	 color: #051622;
 }
  .back .location, .back .price {
 	 font-weight: 600;
@@ -197,13 +180,4 @@
 }
  ::-webkit-scrollbar {
 	 width: 5px;
-}
- ::-webkit-scrollbar-track {
-	 background: #f1f1f1;
-}
- ::-webkit-scrollbar-thumb {
-	 background: #859ddf;
-}
- ::-webkit-scrollbar-thumb:hover {
-	 background: #355cc9;
 }
