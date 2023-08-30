@@ -1,20 +1,15 @@
-// document.querySelector('input[role="send"]').click(function () {
-//     let document.querySelector = document.querySelector(this);
-//     var hasClass = document.querySelectort.hasClass('done');
-//     if (!hasClass){
-//       document.querySelector(this).addClass('clicked');
-//       setTimeout(function(){
-//         document.querySelectort.removeClass('clicked').addClass('done').attr({
-//           value: '',
-//         });
-//       }, time()); 
-//     } else if (hasClass){
-//       document.querySelectort.removeClass().attr({
-//         value: 'Send',
-//       });
-//     }
-//   });
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.popup-btn').click(function(e) {
+      document.querySelector('.popup-wrap').fadeIn(500);
+      document.querySelector('.popup-box').removeClass('transform-out').addClass('transform-in');
   
-//   function time() {
-//     return 3000 + Math.random() * 2000
-//   }
+      e.preventDefault();
+    });
+  
+    document.querySelector('.popup-close').click(function(e) {
+      document.querySelector('.popup-wrap').fadeOut(500);
+      document.querySelector('.popup-box').removeClass('transform-in').addClass('transform-out');
+  
+      e.preventDefault();
+    });
+  });
