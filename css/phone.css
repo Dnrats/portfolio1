@@ -28,8 +28,8 @@ header{
     height: 50%;
 }
 #photo-on-the-left img{
-    width: 65%;
-    height: 90%;
+    width: 250px;
+    height: 350px;
 }
 #text-on-the-right{
     width: 80%;
@@ -236,8 +236,8 @@ header{
     height: 50%;
 }
 #photo-on-the-left img{
-    width: 65%;
-    height: 100%;
+    width: 250px;
+    height: 350px;
 }
 #text-on-the-right{
     width: 80%;
@@ -444,8 +444,8 @@ header{
     height: 60%;
 }
 #photo-on-the-left img{
-    width: 55%;
-    height: 90%;
+    width: 300px;
+    height: 400px;
 }
 #text-on-the-right{
     width: 80%;

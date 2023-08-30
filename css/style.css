@@ -109,8 +109,8 @@ main::-webkit-scrollbar-track{
     align-items: center;
     }
 #photo-on-the-left img {
-    width: 60%;
-    height: 80%;
+    width: 400px;
+    height: 550px;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
