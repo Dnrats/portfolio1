@@ -1,11 +1,12 @@
-@media only screen and (max-width: 1400px){
+@media only screen and (max-width: 1440px) and (min-width: 700px){
 
     #photo-on-the-left {
         width: 50%;
         height: 70%;
         }
         #photo-on-the-left img{
-            width: 60%;
+            width: 350px;
+            height: 500px;
         }
         #text-on-the-right {
             width: 40%;
@@ -117,4 +118,9 @@
             justify-content: space-between;
             align-items: center
         }
+        .fa-brands{
+            color: #F5CB86;
+            font-size: 4rem;
+        }
 };
+
