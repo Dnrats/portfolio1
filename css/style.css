@@ -47,14 +47,14 @@ font-family: 'Cormorant Garamond';
 font-style: italic;
 }
 
-a{
+nav a{
     color: #F5CB86;
     position: relative;
     font-size: 20px;
     text-decoration: none;
   
 }
-a:before {
+nav a:before {
     content: '';
     position: absolute;
     width: 100%;

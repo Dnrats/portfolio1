@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/tablet.css">
     <link rel="stylesheet" href="/css/phone.css">
     <link rel="stylesheet" href="/css/cards-projects.css">
-    <link rel="stylesheet" href="css/popup-image.css">
+    <link rel="stylesheet" href="/css/popup-image.css">
     <script src="https://kit.fontawesome.com/dd2b319c5e.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,6 +31,9 @@
             <div id="text-on-the-right"><div id="text1"><h3>Hi, I'm Artem</h3></div><div id="text2"><p>Front-End Web Developer and UI/UX designer</p></div></div>
         </section>
         <section id="projects">
+            <div id="bigger-image">
+                <img src="" alt="">
+            </div>
             <div id="first-box">
                 <!-- <img src="/assets/happy-health.png" alt="happy health project"> -->
                 <div class="card">
@@ -46,12 +49,18 @@
                             <div class="inner">
                                 <div class="info">
                                     <a href="https://github.com/Dnrats/Happy-Health"><i class="fa-brands size fa-github"></i></a>
-                                    <a href=""><i class="fa-solid size fa-globe"></i></a>
-                                    <i class="fa-regular size fa-image"></i>
+                                    <i class="fa-solid size fa-globe"></i>
+                                    <i class="fa-regular size fa-image" onclick="window.dialog.showModal();"></i>
+                                    <div id="popup-container">
+                                        <dialog id="dialog">
+                                            <img src="/assets/happy-health.png" alt="">
+                                            <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+                                        </dialog>
+                                    </div>
                                     <a href="https://www.figma.com/file/NObnVLB3aEklvDdbd1TCQq/happy-health-firstDraft?type=design&node-id=0%3A1&mode=design&t=uJxzVgQNV3hh3BYv-1"><i class="fa-brands size fa-figma"></i></a>
                                 </div>
                                 <div class="description">
-                                    <p>The project "Happy Health" is a group project. Our coach gave us a mock-up that we had to intergrate. 
+                                    <p>The project "Happy Health" is a group project. Our coach gave us a mock-up that we had to integrate. 
                                         The purpose of the site is to take data from open sources and show it via interactive boxes. 
                                         The data that we used was health and happiness scores by country from 2015 to our days. 
                                         We also had to implement random advices for life in another box at the bottom. These advices could be integrated via API from some site.</p>
