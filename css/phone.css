@@ -276,6 +276,7 @@ header{
 }
 #first-box{
     grid-area: 1 / 1 / 2 / 3 ;
+    height: 50%;
 }
 #second-box{
     grid-area: 1 / 3 / 2 / 4;
@@ -483,7 +484,8 @@ header{
     overflow-x: scroll;
 }
 #first-box{
-    grid-area: 1 / 1 / 2 / 3 ;
+    grid-area: 1 / 1 / 2 / 3;
+    height: 50%;
 }
 #second-box{
     grid-area: 1 / 3 / 2 / 4;
