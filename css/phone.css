@@ -28,8 +28,8 @@ height: 60%;
     height: 50%;
 }
 #photo-on-the-left img{
-    width: 200px;
-    height: 275px;
+    width: 225px;
+    height: 300px;
 }
 #text-on-the-right{
     width: 80%;
@@ -44,20 +44,21 @@ height: 60%;
     font-size: 1rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #text2{
     width: 100%;
     height: 50%;
     display: flex;
     justify-content: center;
+    text-align: center;
     }
 #text-on-the-right h3{
     font-size: 2.5rem;
     }
     #text-on-the-right p{
     font-size: 1.9em;
-    width: 100%;
-    padding: 10px;
+    padding:  5px;
     }
 #projects{
     width: 100%;
