@@ -386,6 +386,9 @@ input, select, textarea {
     color: #F5CB86;
     font-size: 5rem;
 }
+.icons{
+    cursor: pointer;
+}
 #feedback{
     width: 90%;
     height: 35%;

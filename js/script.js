@@ -14,9 +14,9 @@ function flipCard(button) {
  }
 
  const imageSources = [
-   './assets/happy-health.png',
-   'path_to_screenshot_2.jpg',
-   'path_to_screenshot_3.jpg',
+   './assets/Happy-Health1.png',
+   './assets/Contact-form.png',
+   './assets/Marvel-screenshot.png',
    'path_to_screenshot_4.jpg',
    'path_to_screenshot_5.jpg',
    'path_to_screenshot_6.jpg',
