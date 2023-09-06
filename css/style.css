@@ -168,10 +168,8 @@ main::-webkit-scrollbar-track{
     height: 80%;
     justify-self: center;
     align-self: center;
-    border: solid #F5CB86;
     border-radius: 15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    position: relative
 }
 #third-box{
     grid-area: 1 / 5 / 2 / 7;

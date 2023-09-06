@@ -33,84 +33,123 @@
             <div id="text-on-the-right"><div id="text1"><h3>Hi, I'm Artem</h3></div><div id="text2"><p>Front-End Web Developer and UI/UX designer</p></div></div>
         </section>
         <section id="projects">
-            <div id="bigger-image">
-                <img src="" alt="">
-            </div>
             <div id="first-box">
-                <!-- <img src="/assets/happy-health.png" alt="happy health project"> -->
-                <!-- <div class="card">
-                    <input type="checkbox" id="card1" class="more" aria-hidden="true">
-                    <div class="content">
-                        <div class="front">
-                            <div class="inner">
-                                <h2>Happy Health</h2>
-                                <label for="card1" class="button" aria-hidden="true">Details</label>
-                            </div>
+                <div class="card" id="card">
+                    <div class="front">
+                        <h2>Happy Health</h2>
+                        <button id="details" class="buttons " onclick="flipCard(this)">Details</button>
+                    </div>
+                    <div class="back">
+                        <div id="links">
+                            <i class="fa-regular fa-image open-popup" id="open-popup"></i>
+                            <i class="fa-solid fa-earth-europe"></i>
+                            <a href="https://github.com/Dnrats/Happy-Health"><i class="fa-brands fa-github"></i></a>
                         </div>
-                        <div class="back">
-                            <div class="inner">
-                                <div class="info">
-                                    <a href="https://github.com/Dnrats/Happy-Health"><i class="fa-brands size fa-github"></i></a>
-                                    <i class="fa-solid size fa-globe"></i>
-                                    <i class="fa-regular size fa-image" onclick="window.dialog.showModal();"></i>
-                                    <div id="popup-container">
-                                        <dialog id="dialog">
-                                            <img src="/assets/happy-health.png" alt="">
-                                            <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
-                                        </dialog>
-                                    </div>
-                                    <a href="https://www.figma.com/file/NObnVLB3aEklvDdbd1TCQq/happy-health-firstDraft?type=design&node-id=0%3A1&mode=design&t=uJxzVgQNV3hh3BYv-1"><i class="fa-brands size fa-figma"></i></a>
-                                </div>
-                                <div class="description">
-                                    <p>The project "Happy Health" is a group project. Our coach gave us a mock-up that we had to integrate. 
-                                        The purpose of the site is to take data from open sources and show it via interactive boxes. 
-                                        The data that we used was health and happiness scores by country from 2015 to our days. 
-                                        We also had to implement random life advices in the box at the bottom. These advices could be taken from a website via API. 
-                                        I mostly worked on the front part of the site and also on integrating Chart.js to show stats.</p>
-                                </div>
-                                <label for="card1" class="button return" aria-hidden="true">
-                                    <i class="fas fa-arrow-left"></i>
-                                </label>
-                            </div>
+                        <div id="text"><p>The project "Happy Health" is a group project. Our coach gave us a mock-up that we had to integrate. 
+                            The purpose of the site is to take data from open sources and show it via interactive boxes. 
+                            The data that we used was health and happiness scores by country from 2015 to our days. 
+                            We also had to implement random life advices in the box at the bottom. These advices could be taken from a website via API. 
+                            I mostly worked on the front part of the site and also on integrating Chart.js to show stats.</p></div>
+                         <div id="place-for-button">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
+                                <i class="fa-solid fa-arrow-left x"></i>
+                            </button>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
+             <!-- Add the popup structure below the card -->
+             <div class="overlay" id="overlay"></div>
+             <div class="popup" id="popup">
+                 <span class="close" id="close-popup">&times;</span>
+                 <img src="/assets/happy-health.png" alt="Popup Image">
+             </div>
+         </div>
             <div id="second-box">
-                    <div class="card" id="card">
-                        <div class="front">
-                            <h2>Contact Form</h2>
-                            <button id="details" class="buttons">Details</button>
+                <div class="card" id="card">
+                    <div class="front">
+                        <h2>Contact Form</h2>
+                        <button id="details2" class="buttons" onclick="flipCard(this)">Details</button>
+                    </div>
+                    <div class="back">
+                        <div id="links">
+                            <i class="fa-regular fa-image open-popup" id="open-popup"></i>
+                            <i class="fa-solid fa-earth-europe"></i>
+                            <a href="https://github.com/Dnrats/Contact-form"><i class="fa-brands fa-github"></i></a>
                         </div>
-                        <div class="back">
-                            <div id="links">
-                                <i class="fa-regular fa-image"></i>
-                                <div class="modal-container" id="modal-opened">
-                                    <div class="modal">
-                                        <div id="close-image"><i class="fa-solid fa-xmark"></i></div>
-                                        <div id="project-screenshot"><img src="/assets/Contact-form.png" alt=""></div>
-                                    </div>
-                                  </div>
-                                <i class="fa-solid fa-earth-europe"></i>
-                                <a href="https://github.com/Dnrats/Contact-form"><i class="fa-brands fa-github"></i></a>
-                            </div>
-                            <div id="text"><p>Contact form was one of our first serious projects. We had to do a mock-up and code a fully functional contact form. It was a solo project, so i worked alone.
-                                I used PHP for this project in order to retrieve form data and send it, contrary to my current contact form in portfolio where i integrated a JavaScript library Smtp.js.</p></div>
-                             <div id="place-for-button">
-                                <button id="back-button" class="buttons">
-                                    <i class="fa-solid fa-arrow-left"></i>
-                                </button>
-                            </div>
+                        <div id="text">
+                            <p>Contact form was one of our first serious projects. We had to do a mock-up and code a fully functional contact form. It was a solo project, so I worked alone.
+                            I used PHP for this project in order to retrieve form data and send it, contrary to my current contact form in the portfolio where I integrated a JavaScript library Smtp.js.</p>
+                        </div>
+                        <div id="place-for-button">
+                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                                <i class="fa-solid fa-arrow-left x"></i>
+                            </button>
                         </div>
                     </div>
+                </div>
+                <!-- Add the popup structure below the card -->
+                <div class="overlay" id="overlay"></div>
+                <div class="popup" id="popup">
+                    <span class="close" id="close-popup">&times;</span>
+                    <img src="" alt="Popup Image">
+                </div>
             </div>
-            <div id="third-box"></div>
+            
+            <div id="third-box">
+                <div class="card" id="card">
+                    <div class="front">
+                        <h2>Marvel superheroes</h2>
+                        <button id="details" class="buttons " onclick="flipCard(this)">Details</button>
+                    </div>
+                    <div class="back">
+                        <div id="links">
+                            <i class="fa-regular fa-image"></i>
+                            <i class="fa-solid fa-earth-europe"></i>
+                            <a href="https://github.com/Dnrats/Marvel"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <div id="text"><p></p></div>
+                         <div id="place-for-button">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
+                                <i class="fa-solid fa-arrow-left x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="fourth-box"></div>
             <div id="fifth-box"></div>
             <div id="sixth-box"></div>
             <div id="seventh-box"></div>
             <div id="eighth-box"></div>
-            <div id="ninth-box"></div>
+            <div id="ninth-box">
+                <div class="card" id="card">
+                    <div class="front">
+                        <h2>Restaurant website</h2>
+                        <button id="details" class="buttons " onclick="flipCard(this)">Details</button>
+                    </div>
+                    <div class="back">
+                        <div id="links">
+                            <i class="fa-regular fa-image"></i>
+                            <div class="modal-container" id="modal-opened">
+                                <div class="modal">
+                                    <div id="close-image"><i class="fa-solid fa-xmark"></i></div>
+                                    <div id="project-screenshot"><img src="/assets/Contact-form.png" alt=""></div>
+                                </div>
+                              </div>
+                            <i class="fa-solid fa-earth-europe"></i>
+                            <a href="https://github.com/Dnrats/projet_restaurant"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <div id="text"><p></p></div>
+                         <div id="place-for-button">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
+                                <i class="fa-solid fa-arrow-left x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </section>
         <section id="contact">
             <div id="left-part-contact">
