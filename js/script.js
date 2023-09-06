@@ -22,7 +22,7 @@ function flipCard(button) {
    'path_to_screenshot_6.jpg',
    'path_to_screenshot_7.jpg',
    'path_to_screenshot_8.jpg',
-   'path_to_screenshot_9.jpg',
+   './assets/Sabor-del-mundo.png',
  ];
 
  const imageIcons = document.querySelectorAll('.card .fa-regular.fa-image');
