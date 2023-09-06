@@ -13,30 +13,46 @@ function flipCard(button) {
    card.classList.toggle('flipCard');
  }
 
+ const imageSources = [
+   './assets/happy-health.png',
+   'path_to_screenshot_2.jpg',
+   'path_to_screenshot_3.jpg',
+   'path_to_screenshot_4.jpg',
+   'path_to_screenshot_5.jpg',
+   'path_to_screenshot_6.jpg',
+   'path_to_screenshot_7.jpg',
+   'path_to_screenshot_8.jpg',
+   'path_to_screenshot_9.jpg',
+ ];
 
- // Get all the image icons
- const imageIcons = document.querySelectorAll('.fa-regular.fa-image');
+ const imageIcons = document.querySelectorAll('.card .fa-regular.fa-image');
 
  // Get the popup container and content
  const popupContainer = document.getElementById('popup-container');
  const popupContent = document.getElementById('popup-content');
  const screenshot = document.getElementById('screenshot');
  const closePopup = document.getElementById('close-popup');
-
+ 
  // Add click event listeners to each image icon
  imageIcons.forEach((icon, index) => {
    icon.addEventListener('click', () => {
-     // Load the screenshot for the clicked card (you'll need to adjust the image source here)
-     const screenshotSrc = 'path_to_screenshot_' + index + '.jpg';
+     // Get the data-target value to identify the specific popup
+     const target = icon.getAttribute('data-target');
+ 
+     // Get the index of the target
+     const targetIndex = parseInt(target) - 1; // Subtract 1 to account for zero-based index
+ 
+     // Load the screenshot for the clicked card
+     const screenshotSrc = imageSources[targetIndex];
      screenshot.setAttribute('src', screenshotSrc);
-
-     // Show the popup
-     popupContainer.style.display = 'flex';
+ 
+     // Add the "active" class to trigger the animation
+     popupContainer.classList.add('active');
    });
  });
-
+ 
  // Add click event listener to close the popup
  closePopup.addEventListener('click', () => {
-   // Hide the popup
-   popupContainer.style.display = 'none';
+   // Remove the "active" class to hide the popup with animation
+   popupContainer.classList.remove('active');
  });
