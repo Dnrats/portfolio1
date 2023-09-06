@@ -21,23 +21,17 @@ function flipCard(button) {
  
  // Function to open the popup
  function openPopup() {
-   overlay.style.display = 'block';
-
-   // Add the "show" class to trigger the transition animation
-   popup.classList.add('show');
-
-   document.body.style.overflow = 'hidden'; // Disable scrolling
-}
+     overlay.style.display = 'block';
+     popup.style.display = 'block';
+     document.body.style.overflow = 'hidden'; // Disable scrolling
+ }
  
  // Function to close the popup
  function closePopup() {
-   overlay.style.display = 'none';
-   
-   // Remove the "show" class to trigger the fade-out animation
-   popup.classList.remove('show');
-   
-   document.body.style.overflow = 'auto'; // Enable scrolling
-}
+     overlay.style.display = 'none';
+     popup.style.display = 'none';
+     document.body.style.overflow = 'auto'; // Enable scrolling
+ }
  
  // Event listeners
  openPopupButton.addEventListener('click', openPopup);

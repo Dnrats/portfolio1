@@ -142,17 +142,6 @@
  */
 
 
- .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: none;
-    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-}
 
 .popup {
     background-color: white;
@@ -164,25 +153,37 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80vw;
-    max-width: 800px;
+    height: 80vh;
     text-align: center;
     z-index: 2;
     display: none;
-    opacity: 0; /* Initial opacity set to 0 */
-    transition: opacity 0.3s ease-in-out; /* Add a fade-in transition */
+    background-color: #051622;
+    border-radius: 10px;
+    border: none;
+}
+.popup img{
+    width: 90%;
+    height: 90%;
+    padding: 10px;
 }
 
-/* Add a class to show the popup with a fade-in effect */
-.popup.show {
-    opacity: 1;
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
 }
 
-.popup img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* CSS for the broken image icon */
-.fa-regular.fa-image:before {
-    content: "\f03e"; /* Replace with the Font Awesome icon code for an image icon */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    backdrop-filter: blur(10px);
 }
