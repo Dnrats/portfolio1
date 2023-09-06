@@ -28,6 +28,13 @@
         </div>
     </header>
     <main>
+        <!-- Add the popup container here -->
+  <div class="popup-container" id="popup-container">
+    <div class="popup-content" id="popup-content">
+      <img id="screenshot" src="" alt="Project Screenshot">
+      <span class="close-popup" id="close-popup">&times;</span>
+    </div>
+  </div>
         <section id="landing-page">
             <div id="photo-on-the-left"><img  src="/assets/20220225_230530.jpg" alt="My photo"></div>
             <div id="text-on-the-right"><div id="text1"><h3>Hi, I'm Artem</h3></div><div id="text2"><p>Front-End Web Developer and UI/UX designer</p></div></div>
@@ -41,7 +48,7 @@
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" id="open-popup"></i>
+                            <i class="fa-regular fa-image"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href="https://github.com/Dnrats/Happy-Health"><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -58,12 +65,6 @@
                     </div>
                 </div>
             </div>
-             <!-- Add the popup structure below the card -->
-             <div class="overlay" id="overlay"></div>
-             <div class="popup" id="popup">
-                 <span class="close" id="close-popup">&times;</span>
-                 <img src="/assets/happy-health.png" alt="Popup Image">
-             </div>
          </div>
             <div id="second-box">
                 <div class="card" id="card">
@@ -73,7 +74,7 @@
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image open-popup"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href="https://github.com/Dnrats/Contact-form"><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -82,20 +83,13 @@
                             I used PHP for this project in order to retrieve form data and send it, contrary to my current contact form in the portfolio where I integrated a JavaScript library Smtp.js.</p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
-                </div>
             </div>
-            
             <div id="third-box">
                 <div class="card" id="card">
                     <div class="front">
@@ -104,7 +98,7 @@
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image open-popup"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -117,23 +111,17 @@
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
             <div id="fourth-box">
                 <div class="card" id="card">
                     <div class="front">
                         <h2></h2>
-                        <button id="details2" class="buttons" onclick="flipCard(this)">Details</button>
+                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image open-popup" data-target="popup"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -141,28 +129,22 @@
                             <p></p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
             <div id="fifth-box">
                 <div class="card" id="card">
                     <div class="front">
                         <h2></h2>
-                        <button id="details2" class="buttons" onclick="flipCard(this)">Details</button>
+                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image open-popup"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -170,17 +152,11 @@
                             <p></p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
             <div id="sixth-box">
@@ -191,7 +167,7 @@
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image open-popup"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -199,28 +175,22 @@
                             <p></p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
             <div id="seventh-box">
                 <div class="card" id="card">
                     <div class="front">
                         <h2></h2>
-                        <button id="details2" class="buttons" onclick="flipCard(this)">Details</button>
+                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image open-popup"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -228,24 +198,18 @@
                             <p></p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
             <div id="eighth-box">
                 <div class="card" id="card">
                     <div class="front">
                         <h2></h2>
-                        <button id="details2" class="buttons" onclick="flipCard(this)">Details</button>
+                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
                     </div>
                     <div class="back">
                         <div id="links">
@@ -257,17 +221,11 @@
                             <p></p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
             <div id="ninth-box">
@@ -278,7 +236,7 @@
                     </div>
                     <div class="back">
                         <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
+                            <i class="fa-regular fa-image"></i>
                             <i class="fa-solid fa-earth-europe"></i>
                             <a href=""><i class="fa-brands fa-github"></i></a>
                         </div>
@@ -286,17 +244,11 @@
                             <p></p>
                         </div>
                         <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
+                            <button id="back-button" class="buttons" onclick="flipCard(this)">
                                 <i class="fa-solid fa-arrow-left x"></i>
                             </button>
                         </div>
                     </div>
-                </div>
-                <!-- Add the popup structure below the card -->
-                <div class="overlay" id="overlay"></div>
-                <div class="popup" id="popup">
-                    <span class="close" id="close-popup">&times;</span>
-                    <img src="" alt="Popup Image">
                 </div>
             </div>
         </section>

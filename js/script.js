@@ -14,26 +14,29 @@ function flipCard(button) {
  }
 
 
- const openPopupButton = document.getElementById('open-popup');
- const closePopupButton = document.getElementById('close-popup');
- const overlay = document.getElementById('overlay');
- const popup = document.getElementById('popup');
- 
- // Function to open the popup
- function openPopup() {
-     overlay.style.display = 'block';
-     popup.style.display = 'block';
-     document.body.style.overflow = 'hidden'; // Disable scrolling
- }
- 
- // Function to close the popup
- function closePopup() {
-     overlay.style.display = 'none';
-     popup.style.display = 'none';
-     document.body.style.overflow = 'auto'; // Enable scrolling
- }
- 
- // Event listeners
- openPopupButton.addEventListener('click', openPopup);
- closePopupButton.addEventListener('click', closePopup);
- overlay.addEventListener('click', closePopup)
+ // Get all the image icons
+ const imageIcons = document.querySelectorAll('.fa-regular.fa-image');
+
+ // Get the popup container and content
+ const popupContainer = document.getElementById('popup-container');
+ const popupContent = document.getElementById('popup-content');
+ const screenshot = document.getElementById('screenshot');
+ const closePopup = document.getElementById('close-popup');
+
+ // Add click event listeners to each image icon
+ imageIcons.forEach((icon, index) => {
+   icon.addEventListener('click', () => {
+     // Load the screenshot for the clicked card (you'll need to adjust the image source here)
+     const screenshotSrc = 'path_to_screenshot_' + index + '.jpg';
+     screenshot.setAttribute('src', screenshotSrc);
+
+     // Show the popup
+     popupContainer.style.display = 'flex';
+   });
+ });
+
+ // Add click event listener to close the popup
+ closePopup.addEventListener('click', () => {
+   // Hide the popup
+   popupContainer.style.display = 'none';
+ });
