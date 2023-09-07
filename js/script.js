@@ -17,7 +17,7 @@ function flipCard(button) {
    './assets/Happy-Health1.png',
    './assets/Contact-form.png',
    './assets/Marvel-screenshot.png',
-   'path_to_screenshot_4.jpg',
+   './assets/jeu-batons.png',
    'path_to_screenshot_5.jpg',
    'path_to_screenshot_6.jpg',
    'path_to_screenshot_7.jpg',
