@@ -56,3 +56,43 @@ function flipCard(button) {
    // Remove the "active" class to hide the popup with animation
    popupContainer.classList.remove('active');
  });
+
+//  INFO POPUP BUTTON
+
+document.addEventListener("DOMContentLoaded", function () {
+  const popupButton = document.getElementById("popup-button1");
+  const popupContainer = document.getElementById("popup-container1");
+  const section2 = document.getElementById("section2");
+
+  let isVisible = false;
+
+  // Function to check if section 2 is in the viewport
+  function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+  }
+
+  // Function to handle scrolling
+  function handleScroll() {
+      if (isElementInViewport(section2) && !isVisible) {
+          isVisible = true;
+          popupButton.style.opacity = 1;
+      } else if (!isElementInViewport(section2) && isVisible) {
+          isVisible = false;
+          popupButton.style.opacity = 0;
+      }
+  }
+
+  // Add a scroll event listener to the window
+  window.addEventListener("scroll", handleScroll);
+
+  // Toggle the pop-up on button click
+  popupButton.addEventListener("click", function () {
+      popupContainer.classList.toggle("hidden");
+  });
+});
