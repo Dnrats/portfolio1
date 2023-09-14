@@ -40,13 +40,12 @@
             <div id="text-on-the-right"><div id="text1"><h3>Hi, I'm Artem</h3></div><div id="text2"><p>Front-End Web Developer and UI/UX designer</p></div></div>
         </section>
         <section id="projects">
-            <button id="popup-button1"><img src="/assets/octicon_info-16.svg" alt=""></button>
-            <div id="popup-container1" class="hidden">
-                <div class="popup-content1">
-                    <p>This is the first paragraph of text.</p>
-                    <p>This is the second paragraph of text.</p>
-                </div>
+            <button id="showTextButton" class="fixed-button">Show Text</button>
+            <div class="text-container">
+                <p class="hidden">Text 1</p>
+                <p class="hidden">Text 2</p>
             </div>
+        </div>
             <div id="first-box">
                 <div class="card" id="card">
                     <div class="front">
@@ -306,6 +305,7 @@
   <script src="/js/contact.js"></script>  
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="/js/script.js"></script>    
+<script src="/js/popup-info.js"></script>
 </body>
 </html>
 

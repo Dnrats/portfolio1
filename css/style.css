@@ -440,41 +440,58 @@ footer img{
 
 /* POPUP INFO BUTTON */
  
-#popup-button1 {
-    position: fixed;
-    top: 200px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: transparent;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 2;
-}
-#popup-button1 img{
-color: #F5CB86;
-width: 100%;
-height: 100%;
-}
-
-#popup-container1 {
-    position: fixed;
-    top: 200px;
-    right: 200px;
-    width: 300px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: none;
-    z-index: 1;
-}
-
-.popup-content1 {
-    text-align: justify;
-}
-
 .hidden {
-    display: none;
+    display: none; /* Initially hide the text */
+}
+.fixed-button {
+    position: fixed;
+    top: 100px; /* Adjust the top and right values as needed */
+    right: 100px;
+    z-index: 2; /* Ensure it's above other elements */
+}
+
+.text-container {
+    display: none; /* Initially hide the text container */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: opacity 0.5s;
+}
+
+.text-container.active {
+    display: flex; /* Show the text container when it has the 'active' class */
+}
+
+.text-container p {
+    background-color: #051622;
+    text-align: center;
+    width: 70%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-container p.hidden {
+    display: none; /* Initially hide the text */
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #F5CB86;
 }
