@@ -1,0 +1,25 @@
+#crawlerContainer {
+    display: none;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 10px;
+    transform: translateX(100%);
+    animation: moveIcon 10s linear infinite;
+}
+
+@keyframes moveIcon {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}

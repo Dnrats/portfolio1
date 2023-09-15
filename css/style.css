@@ -102,7 +102,7 @@ main::-webkit-scrollbar-track{
 }
 #photo-on-the-left {
     width: 40%;
-    height: 80%;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -440,18 +440,10 @@ footer img{
 
 /* POPUP INFO BUTTON */
  
-.hidden {
-    display: none; /* Initially hide the text */
-}
-.fixed-button {
-    position: fixed;
-    top: 100px; /* Adjust the top and right values as needed */
-    right: 100px;
-    z-index: 2; /* Ensure it's above other elements */
-}
 
-.text-container {
-    display: none; /* Initially hide the text container */
+/* Styles for the new pop-up container */
+.text-container3 {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -464,11 +456,11 @@ footer img{
     transition: opacity 0.5s;
 }
 
-.text-container.active {
-    display: flex; /* Show the text container when it has the 'active' class */
+.text-container3.active {
+    display: flex;
 }
 
-.text-container p {
+.text-container3 p {
     background-color: #051622;
     text-align: center;
     width: 70%;
@@ -483,15 +475,28 @@ footer img{
     align-items: center;
 }
 
-.text-container p.hidden {
-    display: none; /* Initially hide the text */
+.text-container3 p.hidden {
+    display: none;
 }
 
-.close-popup {
+.close-popup3 {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 30px;
     cursor: pointer;
     color: #F5CB86;
+}
+#showTextButton3 {
+    position: fixed;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 1; /* Initially visible */
+    transition: opacity 0.5s;
 }
