@@ -5,13 +5,13 @@
     scroll-behavior: smooth;
 }
 body{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
 }
 header{
-    width: 100%;
+    width: 100vw;
     height: 10vh;
     background-color: #051622;  
     display: flex;
@@ -75,8 +75,8 @@ a:hover:before{
 }
 
 main{
-    width: 100%;
-    height: 90%;
+    width: 100vw;
+    height: 90vh;
     background-color: #051622;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -95,8 +95,8 @@ main::-webkit-scrollbar-track{
 }
 #landing-page {
     display:  flex;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     flex-wrap: wrap;
 }

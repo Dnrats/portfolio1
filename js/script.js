@@ -61,51 +61,25 @@ function flipCard(button) {
 //  ICONS CRAWLER
 
 
-const toggleButton = document.getElementById('toggleCrawler');
-const crawlerContainer = document.getElementById('crawlerContainer');
-const icons = ["html5-icon.svg", "css3-icon.svg"]; // Add your icon file paths here
+document.addEventListener("DOMContentLoaded", function() {
+  const crawlerContainer = document.querySelector(".crawler-container");
+  const toggleButton = document.getElementById("toggleButton");
 
-toggleButton.addEventListener('click', () => {
-    if (crawlerContainer.style.display === 'none') {
-        // Show the crawler
-        toggleButton.textContent = 'Hide Crawler';
-        crawlerContainer.style.display = 'block';
+  // Initial state: crawler is hidden
+  let crawlerVisible = false;
 
-        // Function to add and animate icons progressively
-        function addAndAnimateIcons() {
-            let iconIndex = 0;
-            const totalIcons = icons.length;
-            const iconAnimationDuration = 4; // Adjust animation duration as needed (in seconds)
+  // Function to toggle the visibility of the crawler
+  function toggleCrawler() {
+      if (crawlerVisible) {
+          crawlerContainer.style.display = "none";
+          toggleButton.textContent = "Show";
+      } else {
+          crawlerContainer.style.display = "block";
+          toggleButton.textContent = "Hide";
+      }
+      crawlerVisible = !crawlerVisible;
+  }
 
-            function addNextIcon() {
-                if (iconIndex < totalIcons) {
-                    const iconPath = icons[iconIndex];
-                    const icon = document.createElement('div');
-                    icon.className = 'icon';
-                    const img = document.createElement('img');
-                    img.src = iconPath;
-                    img.alt = 'Icon';
-                    icon.appendChild(img);
-                    crawlerContainer.appendChild(icon);
-                    
-                    // Animate the icon (fade in and move left)
-                    icon.style.animation = `moveIcon ${iconAnimationDuration}s linear, fadeIn ${iconAnimationDuration / 2}s ease-in`;
-                    
-                    iconIndex++;
-                    setTimeout(addNextIcon, (iconAnimationDuration / 2) * 1000);
-                }
-            }
-
-            addNextIcon();
-        }
-
-        addAndAnimateIcons();
-    } else {
-        // Hide the crawler
-        toggleButton.textContent = 'Show Crawler';
-        crawlerContainer.style.display = 'none';
-        while (crawlerContainer.firstChild) {
-            crawlerContainer.removeChild(crawlerContainer.firstChild);
-        }
-    }
+  // Add click event listener to the toggle button
+  toggleButton.addEventListener("click", toggleCrawler);
 });
