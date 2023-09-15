@@ -63,36 +63,49 @@ function flipCard(button) {
 
 const toggleButton = document.getElementById('toggleCrawler');
 const crawlerContainer = document.getElementById('crawlerContainer');
+const icons = ["html5-icon.svg", "css3-icon.svg"]; // Add your icon file paths here
 
 toggleButton.addEventListener('click', () => {
     if (crawlerContainer.style.display === 'none') {
         // Show the crawler
         toggleButton.textContent = 'Hide Crawler';
         crawlerContainer.style.display = 'block';
-        
-        // Function to add icons progressively
-        function addIcon() {
-            const icon = document.createElement('div');
-            icon.className = 'icon';
-            icon.innerHTML = '⭐'; // You can use any icon here
-            crawlerContainer.appendChild(icon);
-            
-            // Remove the first icon when it goes out of the container
-            if (crawlerContainer.children.length > 5) {
-                crawlerContainer.removeChild(crawlerContainer.children[0]);
+
+        // Function to add and animate icons progressively
+        function addAndAnimateIcons() {
+            let iconIndex = 0;
+            const totalIcons = icons.length;
+            const iconAnimationDuration = 4; // Adjust animation duration as needed (in seconds)
+
+            function addNextIcon() {
+                if (iconIndex < totalIcons) {
+                    const iconPath = icons[iconIndex];
+                    const icon = document.createElement('div');
+                    icon.className = 'icon';
+                    const img = document.createElement('img');
+                    img.src = iconPath;
+                    img.alt = 'Icon';
+                    icon.appendChild(img);
+                    crawlerContainer.appendChild(icon);
+                    
+                    // Animate the icon (fade in and move left)
+                    icon.style.animation = `moveIcon ${iconAnimationDuration}s linear, fadeIn ${iconAnimationDuration / 2}s ease-in`;
+                    
+                    iconIndex++;
+                    setTimeout(addNextIcon, (iconAnimationDuration / 2) * 1000);
+                }
             }
+
+            addNextIcon();
         }
 
-        // Add icons progressively every 2 seconds
-        const iconInterval = setInterval(addIcon, 2000);
-
-        // Stop adding icons after a certain time (e.g., 30 seconds)
-        setTimeout(() => {
-            clearInterval(iconInterval);
-        }, 30000);
+        addAndAnimateIcons();
     } else {
         // Hide the crawler
         toggleButton.textContent = 'Show Crawler';
         crawlerContainer.style.display = 'none';
+        while (crawlerContainer.firstChild) {
+            crawlerContainer.removeChild(crawlerContainer.firstChild);
+        }
     }
 });
