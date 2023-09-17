@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/login-style.css">
+    <link rel="stylesheet" href="/login-style.css">
 </head>
 <body>
  <div>
-    <h2>Login</h2>
+    <h2>Connection</h2>
 <form id="admin-login-form">
   <label for="username">Username:</label>
   <input type="text" id="username" name="username" required>
@@ -30,7 +30,7 @@
         const password = document.getElementById('password').value;
   
         try {
-          const response = await fetch('/api/login', {
+          const response = await fetch('/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
