@@ -58,28 +58,23 @@ function flipCard(button) {
  });
 
 
-//  ICONS CRAWLER
+//  ICONS CONTAINER
 
+const toggleButton = document.getElementById('toggleButton');
+const myDiv = document.getElementById('myDiv');
 
-document.addEventListener("DOMContentLoaded", function() {
-  const crawlerContainer = document.querySelector(".crawler-container");
-  const toggleButton = document.getElementById("toggleButton");
-
-  // Initial state: crawler is hidden
-  let crawlerVisible = false;
-
-  // Function to toggle the visibility of the crawler
-  function toggleCrawler() {
-      if (crawlerVisible) {
-          crawlerContainer.style.display = "none";
-          toggleButton.textContent = "Show";
-      } else {
-          crawlerContainer.style.display = "block";
-          toggleButton.textContent = "Hide";
-      }
-      crawlerVisible = !crawlerVisible;
-  }
-
-  // Add click event listener to the toggle button
-  toggleButton.addEventListener("click", toggleCrawler);
+toggleButton.addEventListener('click', function() {
+    if (myDiv.style.display === 'none') {
+        myDiv.style.display = 'block';
+        toggleButton.textContent = 'Hide';
+        setTimeout(() => {
+            myDiv.style.opacity = '1';
+        }, 10); // Delay for a tiny bit to allow display property to take effect
+    } else {
+        myDiv.style.opacity = '0';
+        setTimeout(() => {
+            myDiv.style.display = 'none';
+        }, 2000); // 2 seconds for the fade-out transition
+        toggleButton.textContent = 'Show';
+    }
 });

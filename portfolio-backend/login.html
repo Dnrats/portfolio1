@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login-style.css">
+</head>
+<body>
+ <div>
+    <h2>Login</h2>
+<form id="admin-login-form">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+
+  <button type="submit">Login</button>
+</form>
+ </div>   
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('admin-login-form');
+  
+      loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent the default form submission
+  
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+  
+        try {
+          const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password }),
+          });
+  
+          if (response.ok) {
+            // Authentication succeeded, you can redirect or show a success message
+            window.location.href = '/admin/dashboard'; // Redirect to the admin dashboard
+          } else {
+            // Authentication failed, show an error message
+            const data = await response.json();
+            alert(data.message);
+          }
+        } catch (error) {
+          console.error('An error occurred:', error);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
