@@ -1,8 +1,10 @@
-require('dotenv').config();
-const firebase = require('firebase/app');
-require('firebase/auth');
-require('firebase/firestore');
+import dotenv from 'dotenv';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
+// Initialize dotenv
+dotenv.config();
 
 
 
@@ -134,6 +136,8 @@ function displayMessagesOnLogin() {
 window.addEventListener('load', () => {
   displayMessagesOnLogin();
 });
+
+
 
 // Initialize Firebase using environment variables
 const firebaseConfig = {

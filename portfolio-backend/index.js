@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -5,6 +6,7 @@ const admin = require('firebase-admin');
 const adminUID = process.env.ADMIN_UID;
 const serviceAccount = require('./your-firebase-admin-key.json');
 const path = require('path'); // Import the path module
+
 
 // Initialize Firebase Admin SDK
 admin.initializeApp({
@@ -53,7 +55,8 @@ app.listen(PORT, () => {
 
 // Serve your main index.html page at the root route
 app.get('/', (req, res) => {
-  // Serve your main index.html file here
+  const indexPath = path.join(__dirname, '../index.html');
+  res.sendFile(indexPath);
 });
 
 // Serve the login page at a specific URL like /login
