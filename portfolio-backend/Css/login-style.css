@@ -49,16 +49,16 @@ h2{
     color: #f0f0f0;
 }
 button{
-background-color: #EDDE68;
-width: 150px;
-height: 35px;
-border-radius: 10px;
-border: none;
-box-shadow: 2px 2px 7px 2px #1F1E1F;
-color: #1F1E1F;
-font-family: 'GFS Didot', serif;
-font-size: 1rem;
-}
+    background-color: #EBDECC;
+    width: 150px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 7px 2px #1F1E1F;
+    color: black;
+    font-family: 'GFS Didot', serif;
+    font-size: 1.2rem;
+    }
 label{
     font-family: 'GFS Didot', serif;
     font-size: 1.5rem;

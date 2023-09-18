@@ -15,15 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
-
-// Dummy user data (for simplicity)
-const users = [
-  { username: 'your_username', password: 'your_password' }, // Replace with your credentials
-];
-
-// Dummy messages data (for simplicity)
-const messages = [];
+app.use(bodyParser.json());;
 
 // Middleware to check if the user is the admin
 const authenticateAdmin = (req, res, next) => {
@@ -52,43 +44,6 @@ app.get('/api/admin-only', authenticateAdmin, (req, res) => {
     res.json({ message: 'You are not allowed here' });
   });
    
-// Routes
-
-// Dummy route to add a message
-app.post('/api/messages', authenticateUser, (req, res) => {
-  const { message, date } = req.body;
-  const user = req.user;
-
-  const newMessage = { user, message, date };
-  messages.push(newMessage);
-
-  return res.status(201).json(newMessage);
-});
-
-// Dummy route to get all messages
-app.get('/api/messages', (req, res) => {
-  return res.status(200).json(messages);
-});
-
-// Dummy route to delete a message by ID
-app.delete('/api/messages/:id', authenticateUser, (req, res) => {
-  const id = req.params.id;
-
-  const index = messages.findIndex((message) => message.id === id);
-
-  if (index === -1) {
-    return res.status(404).json({ message: 'Message not found' });
-  }
-
-  // Check if the user is the author of the message (you can expand this check)
-  if (messages[index].user.username !== req.user.username) {
-    return res.status(403).json({ message: 'Access denied' });
-  }
-
-  messages.splice(index, 1);
-
-  return res.status(204).send();
-});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
@@ -107,3 +62,13 @@ app.get('/login', (req, res) => {
 });
 
 // ... Other routes for your application ...
+
+// Example route to post a message with a date
+app.post('/api/messages', authenticateUser, (req, res) => {
+  const { message, date } = req.body;
+
+  // Store the message and date in your data structure or database
+
+  // Respond with a success status
+  res.status(201).json({ message: 'Message posted successfully' });
+});
