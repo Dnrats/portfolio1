@@ -57,7 +57,7 @@ h2{
         height: 30%;
         resize: none;
     }
-    button{
+    #text-container button{
         width: 30%;
         height: 10%;
         border-radius: 15px;
