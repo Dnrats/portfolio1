@@ -3,12 +3,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const admin = require('firebase-admin');
 const adminUID = process.env.ADMIN_UID;
+const serviceAccount = require('./your-firebase-admin-key.json');
+const path = require('path'); // Import the path module
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require('./your-firebase-admin-key.json'); // Update with your key file
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://your-project-id.firebaseio.com', // Replace with your Firebase project URL
 });
 
 const app = express();
@@ -39,7 +39,7 @@ const authenticateAdmin = (req, res, next) => {
   };
 
 // Example route accessible only to the admin
-app.get('/api/admin-only', authenticateAdmin, (req, res) => {
+app.get('/dashboard', authenticateAdmin, (req, res) => {
     // This route is accessible only to the admin
     res.json({ message: 'You are not allowed here' });
   });
@@ -59,6 +59,7 @@ app.get('/', (req, res) => {
 // Serve the login page at a specific URL like /login
 app.get('/login', (req, res) => {
   const loginPagePath = path.join(__dirname, 'login.html');
+  res.sendFile(loginPagePath);
 });
 
 // ... Other routes for your application ...
