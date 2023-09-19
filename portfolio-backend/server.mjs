@@ -2,8 +2,9 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import mysql from 'mysql2';
+import mysql from 'mysql';
 import path from 'path';
+import bcrypt from 'bcrypt';
 
 // Import the configuration
 import { dbConfig } from './config.js'; // Adjust the path as needed
@@ -22,26 +23,34 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
 
-// ...
+app.use('/Css', express.static(path.join(__dirname, 'Css')));
 
 // POST route for handling user login
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   // Query the database to verify admin user's credentials
-  db.query('SELECT * FROM admin_users WHERE username = ? AND password = ?', [username, password], (err, results) => {
-    if (err) {
-      console.error('Database error:', err);
-      return res.status(500).json({ message: 'Database error' });
-    }
+db.query('SELECT * FROM admin_user WHERE username = ?', [username], async (err, results) => {
+  if (err) {
+    console.error('Database error:', err);
+    return res.status(500).json({ message: 'Database error' });
+  }
 
-    if (results.length === 0) {
-      return res.status(401).json({ success: false, message: 'Authentication failed' });
-    }
+  if (results.length === 0) {
+    return res.status(401).json({ success: false, message: 'Authentication failed' });
+  }
 
-    // User is authenticated
-    res.status(200).json({ success: true, message: 'Authentication successful' });
-  });
+  // Compare the hashed password with the provided password
+  const storedPasswordHash = results[0].password; 
+  const passwordsMatch = await bcrypt.compare(password, storedPasswordHash);
+
+  if (!passwordsMatch) {
+    return res.status(401).json({ success: false, message: 'Authentication failed' });
+  }
+
+  // User is authenticated
+  res.status(200).json({ success: true, message: 'Authentication successful' });
+});
 });
 
 // Send to dashboard if connection is successful
@@ -57,7 +66,7 @@ function isAuthenticated(req, res, next) {
   const { username, password } = req.body;
 
   // Query the database to verify admin user's credentials
-  db.query('SELECT * FROM admin_users WHERE username = ? AND password = ?', [username, password], (err, results) => {
+  db.query('SELECT * FROM admin_users WHERE username = ?', [username], async (err, results) => {
     if (err) {
       console.error('Database error:', err);
       return res.status(500).json({ message: 'Database error' });
@@ -67,10 +76,18 @@ function isAuthenticated(req, res, next) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
+    const storedPasswordHash = results[0].password;
+    const passwordsMatch = await bcrypt.compare(password, storedPasswordHash);
+
+    if (!passwordsMatch) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
     // User is authenticated
     next();
   });
 }
+
 
 // Start the server
 app.listen(port, () => {
@@ -114,4 +131,10 @@ app.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-// ...
+
+// Serve static files from the main folder
+app.use(express.static(path.join(__dirname)));
+
+app.use('/Javascript', express.static(path.join(__dirname, 'Javascript')));
+
+
