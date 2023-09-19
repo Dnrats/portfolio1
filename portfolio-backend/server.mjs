@@ -37,43 +37,52 @@ app.get('/', (req, res) => {
 
 app.use('/Css', express.static(path.join(__dirname, 'Css')));
 
+// ... (other imports and setup)
+
 // POST route for handling user login
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   console.log('Stage 1');
 
   // Query the database to verify admin user's credentials
-db.query('SELECT * FROM admin_user WHERE username = ?', [username], async (err, results) => {
-  if (err) {
-    console.error('Database error:', err);
-    return res.status(500).json({ message: 'Database error' });
-  }
+  db.query('SELECT * FROM admin_user WHERE username = ?', [username], async (err, results) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ message: 'Database error' });
+    }
 
-  if (results.length === 0) {
-    return res.status(401).json({ success: false, message: 'Authentication failed' });
-  }
-console.log('Stage 2');
+    if (results.length === 0) {
+      return res.status(401).json({ success: false, message: 'Authentication failed' });
+    }
+    console.log('Stage 2');
 
-  // Compare the hashed password with the provided password
-  // const storedPassword = results[0].password; 
-  // const passwordsMatch = await bcrypt.compare(password, storedPasswordHash);
+    // Compare the hashed password with the provided password
+    // const storedPassword = results[0].password;
+    // const passwordsMatch = await bcrypt.compare(password, storedPasswordHash);
 
-  // if (!passwordsMatch) {
-  //   console.log('Password does not match');
-  //   return res.status(401).json({ success: false, message: 'Authentication failed' });
-  // }
-  
-  if (password === results[0].password) {
-    console.log('Authentication successful');
-    req.session.username = username;
-    return res.status(200).json({ success: true, message: 'Authentication successful' });
-  } else {
-    console.log('Password does not match');
-    return res.status(401).json({ success: false, message: 'Authentication failed' });
-  }
+    // Instead of bcrypt, store the plain text password in the session
+    const storedPassword = results[0].password;
+
+    if (password === storedPassword) {
+      console.log('Authentication successful');
+      req.session.username = username;
+      req.session.password = password; // Store the plain text password in the session
+      return res.status(200).json({ success: true, message: 'Authentication successful' });
+    } else {
+      console.log('Password does not match');
+      return res.status(401).json({ success: false, message: 'Authentication failed' });
+    }
+  });
 });
-});
+
+// ... (other middleware and routes)
+
 console.log('Stage 4');
+
+// Send to dashboard if connection is successful
+app.get('/dashboard', isAuthenticated, (req, res) => {
+  res.sendFile(path.join(__dirname, 'dashboard.html'));
+});
 
 
 // MySQL database connection setup using the imported configuration
@@ -81,17 +90,10 @@ const db = mysql.createConnection(dbConfig);
 
 // Middleware to check if the user is authenticated
 function isAuthenticated(req, res, next) {
-  const { username, password } = req.body;
-
-  // Compare the provided username and password with the user's credentials stored in the session
   const storedUsername = req.session.username; // Access the username from the session
   const storedPassword = req.session.password; // Access the plain text password from the session
 
-  if (username === storedUsername && password === storedPassword) {
-    // Assuming you have successfully authenticated the user
-      req.session.username = username; 
-// Store the username in the session
-
+  if (storedUsername && storedPassword) {
     // User is authenticated, proceed to the next middleware
     next();
   } else {
@@ -104,6 +106,8 @@ function isAuthenticated(req, res, next) {
 app.get('/dashboard', isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
+
+
 
 
 // Start the server
