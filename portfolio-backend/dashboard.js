@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
           if (data.success) {
             // Message posted successfully, update the message list
             updateMessageList();
+            // Clear the message input
+            messageTextarea.value = '';
           } else {
             // Display an error message to the user
             alert('Failed to post the message. Please try again.');
@@ -54,8 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
               const messageItem = document.createElement('div');
               messageItem.textContent = `${message.date}: ${message.text}`;
   
+              // Set the data-message-id attribute with the message ID
+              messageItem.setAttribute('data-message-id', message.id);
+  
+              // Append Edit and Delete buttons to messageItem
               const editButton = document.createElement('button');
               editButton.textContent = 'Edit';
+  
+              const deleteButton = document.createElement('button');
+              deleteButton.textContent = 'Delete';
   
               // Edit Button Click Event
               editButton.addEventListener('click', () => {
@@ -66,9 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 openEditForm(messageId);
               });
   
-              const deleteButton = document.createElement('button');
-              deleteButton.textContent = 'Delete';
-  
               // Delete Button Click Event
               deleteButton.addEventListener('click', () => {
                 // Retrieve the message ID from the data attribute
@@ -78,15 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const confirmDelete = window.confirm('Are you sure you want to delete this message?');
                 if (confirmDelete) {
                   deleteMessage(messageId);
+  
+                  // Inside your deleteButton.addEventListener
+                  messageList.removeChild(messageItem);
                 }
               });
   
-              // Set the data-message-id attribute with the message ID
-              messageItem.setAttribute('data-message-id', message.id);
-  
+              // Append buttons to messageItem
               messageItem.appendChild(editButton);
               messageItem.appendChild(deleteButton);
   
+              // Append messageItem to messageList
               messageList.appendChild(messageItem);
             });
           } else {
@@ -102,19 +110,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial load: fetch and display messages
     updateMessageList();
   
-    // Function to open an edit form/modal with the given message ID
+    // Function to open the edit modal with a specific message ID
     function openEditForm(messageId) {
-      // Implement your logic to open an edit form/modal here
-      // You can use the messageId to fetch message details from the server
-      // and populate the form fields for editing
-      console.log(`Editing message with ID: ${messageId}`);
+      // Retrieve the message text from the message item
+      const messageItem = document.querySelector(`[data-message-id="${messageId}"]`);
+      const messageText = messageItem.textContent.split(': ')[1]; // Extract the message text
+  
+      // Set the message text in the edit modal
+      const editModal = document.getElementById('editModal');
+      const editMessageText = document.getElementById('editMessageText');
+  
+      // Save Edit Button Click Event
+      document.getElementById('saveEditButton').addEventListener('click', () => {
+        // Retrieve the edited message text
+        const editedMessageText = editMessageText.value;
+  
+        // Retrieve the message ID from the button's data attribute
+        const messageId = document.getElementById('saveEditButton').getAttribute('data-message-id');
+  
+        // Send a POST request to the server to save the edited message
+        console.log('editedMessageText:', editedMessageText);
+        fetch(`/edit-message/${messageId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ newText: editedMessageText }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              // Close the edit modal
+              editModal.style.display = 'none';
+  
+              // Update the message list
+              updateMessageList();
+            } else {
+              // Handle the error, display a message, etc.
+              console.error('Failed to save the edited message:', data.message);
+            }
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      });
+  
+      editMessageText.value = messageText;
+  
+      // Show the edit modal
+      editModal.style.display = 'block';
+  
+      // Save the message ID for reference when saving edits
+      document.getElementById('saveEditButton').setAttribute('data-message-id', messageId);
     }
+  
+    // Close Button Click Event
+    document.getElementById('closeEditModal').addEventListener('click', () => {
+      // Hide the modal when Close button is clicked
+      const editModal = document.getElementById('editModal');
+      editModal.style.display = 'none';
+    });
   
     // Function to delete a message with the given message ID
     function deleteMessage(messageId) {
       // Implement your logic to confirm and delete the message here
       // You can use the messageId to send a DELETE request to the server
-      // to delete the message
       console.log(`Deleting message with ID: ${messageId}`);
     }
   });

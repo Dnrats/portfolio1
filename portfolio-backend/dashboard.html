@@ -19,6 +19,14 @@
     <div id="messageList">
       <!-- Display posted messages here -->
     </div>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeEditModal">&times;</span>
+          <h2>Edit Message</h2>
+          <textarea id="editMessageText" rows="4" cols="50"></textarea>
+          <button id="saveEditButton">Save</button>
+        </div>
+      </div>      
     </main>
     <script type="module" src="dashboard.js"></script>
     <script src="server.mjs"></script>

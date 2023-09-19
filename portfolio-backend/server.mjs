@@ -157,11 +157,16 @@ app.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-// Edit a message by ID
 app.put('/edit-message/:id', isAuthenticated, (req, res) => {
   const messageId = req.params.id;
   const { newText } = req.body;
 
+  // Add validation to check if newText is not empty or null
+  if (!newText || newText.trim() === '') {
+    return res.status(400).json({ success: false, message: 'Invalid message text' });
+  }
+
+  console.log('newText:', newText);
   // Update the message with the new text in the database
   db.query('UPDATE messages SET text = ? WHERE id = ?', [newText, messageId], (err) => {
     if (err) {
@@ -173,6 +178,8 @@ app.put('/edit-message/:id', isAuthenticated, (req, res) => {
     res.status(200).json({ success: true, message: 'Message updated successfully' });
   });
 });
+
+
 
 // Remove a message by ID
 app.delete('/remove-message/:id', isAuthenticated, (req, res) => {
