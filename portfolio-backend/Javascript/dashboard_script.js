@@ -1,13 +1,8 @@
-import dotenv from 'dotenv';
+import { firebaseConfig } from './Javascript/firebaseConfig';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-
-// Initialize dotenv
-dotenv.config();
-
-
-
+firebase.initializeApp(firebaseConfig);
 const messageInput = document.getElementById('message');
 const dateInput = document.getElementById('messageDate');
 const postButton = document.getElementById('postButton');
@@ -136,25 +131,6 @@ function displayMessagesOnLogin() {
 window.addEventListener('load', () => {
   displayMessagesOnLogin();
 });
-
-
-
-// Initialize Firebase using environment variables
-const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
-};
-
-firebase.initializeApp(firebaseConfig);
-
-// Initialize Firebase Authentication and Firestore
-const auth = getAuth(firebaseApp);
-const db = getFirestore(firebaseApp);
 
 
 // Add an event listener to the logout button
