@@ -115,6 +115,9 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+
+
+
 // POST route for posting a message
 app.post('/post-message', isAuthenticated, (req, res) => {
   const { date, message } = req.body;
@@ -145,11 +148,46 @@ app.get('/get-messages', isAuthenticated, (req, res) => {
   });
 });
 
+
+
 // Logout route
 app.get('/logout', (req, res) => {
   // Perform logout actions (e.g., clear session) and redirect to the login page
   // You can implement your logout logic here
   res.redirect('/login');
+});
+
+// Edit a message by ID
+app.put('/edit-message/:id', isAuthenticated, (req, res) => {
+  const messageId = req.params.id;
+  const { newText } = req.body;
+
+  // Update the message with the new text in the database
+  db.query('UPDATE messages SET text = ? WHERE id = ?', [newText, messageId], (err) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ success: false, message: 'Database error' });
+    }
+
+    // Message updated successfully
+    res.status(200).json({ success: true, message: 'Message updated successfully' });
+  });
+});
+
+// Remove a message by ID
+app.delete('/remove-message/:id', isAuthenticated, (req, res) => {
+  const messageId = req.params.id;
+
+  // Delete the message from the database
+  db.query('DELETE FROM messages WHERE id = ?', [messageId], (err) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ success: false, message: 'Database error' });
+    }
+
+    // Message deleted successfully
+    res.status(200).json({ success: true, message: 'Message deleted successfully' });
+  });
 });
 
 
