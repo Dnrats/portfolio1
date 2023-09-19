@@ -2,14 +2,15 @@
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import mysql from 'mysql2'; // Import the MySQL module
+import mysql from 'mysql2';
+import path from 'path';
+
+// Import the configuration
+import { dbConfig } from './config.js'; // Adjust the path as needed
 
 // Obtain the directory path of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-// Import the path module for handling file paths
-import path from 'path';
 
 // Create an Express app and set up the port
 const app = express();
@@ -25,10 +26,8 @@ app.get('/dashboard', isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// MySQL database connection setup using the imported configuration
+const db = mysql.createConnection(dbConfig);
 
 // Middleware to check if the user is authenticated
 function isAuthenticated(req, res, next) {
@@ -50,3 +49,7 @@ function isAuthenticated(req, res, next) {
   });
 }
 
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
