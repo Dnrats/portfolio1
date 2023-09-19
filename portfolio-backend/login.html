@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js" type="module"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js" type="module"></script>
     <link rel="stylesheet" href="/Css/login-style.css">
 </head>
 <body>
@@ -20,21 +18,7 @@
 
   <button type="submit">Login</button>
 </form>
- </div>   
- <script>
-  // Firebase Authentication code goes here
-  // Initialize Firebase and handle user authentication
-  // ...
-
-  firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-          // User is signed in, redirect to the dashboard
-          window.location.href = '/dashboard.html'; // Replace with your dashboard URL
-      }
-  });
-</script>
- <script src="/login-script.js" type="module"></script>
-
-
+ </div>
+ <script src="/portfolio-backend/login.js"></script>   
 </body>
 </html>

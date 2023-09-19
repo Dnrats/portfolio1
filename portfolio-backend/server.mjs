@@ -22,6 +22,28 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
 
+// ...
+
+// POST route for handling user login
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Query the database to verify admin user's credentials
+  db.query('SELECT * FROM admin_users WHERE username = ? AND password = ?', [username, password], (err, results) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ message: 'Database error' });
+    }
+
+    if (results.length === 0) {
+      return res.status(401).json({ success: false, message: 'Authentication failed' });
+    }
+
+    // User is authenticated
+    res.status(200).json({ success: true, message: 'Authentication successful' });
+  });
+});
+
 app.get('/dashboard', isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
