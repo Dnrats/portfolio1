@@ -44,6 +44,7 @@ app.post('/login', (req, res) => {
   });
 });
 
+// Send to dashboard if connection is successful
 app.get('/dashboard', isAuthenticated, (req, res) => {
   res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
@@ -75,3 +76,42 @@ function isAuthenticated(req, res, next) {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+// POST route for posting a message
+app.post('/post-message', isAuthenticated, (req, res) => {
+  const { date, message } = req.body;
+
+  // Insert the message into the database (adjust this query based on your schema)
+  db.query('INSERT INTO messages (date, text) VALUES (?, ?)', [date, message], (err) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ success: false, message: 'Database error' });
+    }
+
+    // Message posted successfully
+    res.status(200).json({ success: true, message: 'Message posted successfully' });
+  });
+});
+
+// GET route for fetching messages
+app.get('/get-messages', isAuthenticated, (req, res) => {
+  // Fetch messages from the database (adjust this query based on your schema)
+  db.query('SELECT * FROM messages', (err, results) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).json({ success: false, message: 'Database error' });
+    }
+
+    // Send the list of messages to the client
+    res.status(200).json({ success: true, messages: results });
+  });
+});
+
+// Logout route
+app.get('/logout', (req, res) => {
+  // Perform logout actions (e.g., clear session) and redirect to the login page
+  // You can implement your logout logic here
+  res.redirect('/login');
+});
+
+// ...
