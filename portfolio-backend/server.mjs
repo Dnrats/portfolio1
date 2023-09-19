@@ -154,8 +154,15 @@ app.get('/get-messages', isAuthenticated, (req, res) => {
 app.get('/logout', (req, res) => {
   // Perform logout actions (e.g., clear session) and redirect to the login page
   // You can implement your logout logic here
-  res.redirect('/login');
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Error destroying session:', err);
+    }
+    // Redirect to the login page
+    res.redirect('/'); // Assuming your login page route is "/"
+  });
 });
+
 
 app.put('/edit-message/:id', isAuthenticated, (req, res) => {
   const messageId = req.params.id;

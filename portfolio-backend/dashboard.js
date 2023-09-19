@@ -75,20 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 openEditForm(messageId);
               });
   
-              // Delete Button Click Event
-              deleteButton.addEventListener('click', () => {
-                // Retrieve the message ID from the data attribute
-                const messageId = messageItem.getAttribute('data-message-id');
+             // Delete Button Click Event
+deleteButton.addEventListener('click', () => {
+    // Retrieve the message ID from the data attribute
+    const messageId = messageItem.getAttribute('data-message-id');
   
-                // Ask for confirmation and delete the message if confirmed
-                const confirmDelete = window.confirm('Are you sure you want to delete this message?');
-                if (confirmDelete) {
-                  deleteMessage(messageId);
+    // Ask for confirmation and delete the message if confirmed
+    const confirmDelete = window.confirm('Are you sure you want to delete this message?');
+    if (confirmDelete) {
+      // Send a DELETE request to the server to delete the message
+      fetch(`/remove-message/${messageId}`, {
+        method: 'DELETE',
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            // Remove the message from the DOM
+            messageList.removeChild(messageItem);
+          } else {
+            // Handle the error, display a message, etc.
+            console.error('Failed to delete the message:', data.message);
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }
+  });
   
-                  // Inside your deleteButton.addEventListener
-                  messageList.removeChild(messageItem);
-                }
-              });
   
               // Append buttons to messageItem
               messageItem.appendChild(editButton);
