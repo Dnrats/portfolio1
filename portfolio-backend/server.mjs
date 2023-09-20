@@ -4,26 +4,24 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import mysql from 'mysql';
 import path from 'path';
-// import bcrypt from 'bcrypt';
 import bodyParser from 'body-parser'; 
 import { dbConfig } from './config.js'; 
 import session from 'express-session'; // Import express-session
+import { sessionSecret } from './secrets.js';
 
 // Obtain the directory path of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
 // Create an Express app and set up the port
 const app = express();
 const port = 3000;
-
 // Configure body-parser to handle JSON data
 app.use(bodyParser.json());
 
 app.use(
   session({
-    secret: 'vkwefbdn&*f67mjfhNfkFN%', // Replace with a secret key for session encryption
+    secret: sessionSecret, // Replace with a secret key for session encryption
     resave: false,
     saveUninitialized: true,
   })
