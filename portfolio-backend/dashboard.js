@@ -58,10 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
               // Set the data-message-id attribute with the message ID
               messageItem.setAttribute('data-message-id', message.id);
+
+              // Add a class to style each message
+              messageItem.classList.add('message'); // Apply the CSS styles to each message
   
               // Append Edit and Delete buttons to messageItem
               const editButton = document.createElement('button');
               editButton.textContent = 'Edit';
+
+                // Append messageItem to messageList
+              messageList.appendChild(messageItem);
   
               const deleteButton = document.createElement('button');
               deleteButton.textContent = 'Delete';
