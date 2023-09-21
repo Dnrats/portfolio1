@@ -518,11 +518,28 @@ footer img{
     overflow-y: auto; /* Enable vertical scrolling if messages exceed the height */
     transition: max-height 0.3s ease; /* Add smooth transition for max-height change */
   }
-  
-  /* Message Content */
-  .message-content {
-    padding: 10px;
+
+/* Add position: absolute to the header and button */
+/* Add this to your CSS */
+.message-header {
+    height: 30px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    color: #F5CB86;
+    align-items: center;
+    transition: opacity 0.3s ease; /* Add opacity transition */
   }
+  
+  /* Hide the text and button when minimized */
+  .message-container.minimized .message-header {
+    opacity: 0;
+  }
+  .message-container.minimized {
+    max-height: 30px; /* Set a fixed height when minimized */
+  }
+  
+
   
   /* Minimize Button */
   .minimize-button {

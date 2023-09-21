@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const messageContainer = document.querySelector('.message-container');
   const messageContent = document.getElementById('messageContent');
   const minimizeMessagesButton = document.getElementById('minimizeMessagesButton');
+  const headerH3 = document.querySelector('.message-header h3'); 
 
   let isMinimized = false;
 
@@ -93,10 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isMinimized) {
       messageContent.style.opacity = '0';
+      headerH3.style.display = 'none';
       messageContainer.style.height = '40px';
       messageContainer.style.width = '40px';
     } else {
       messageContent.style.opacity = '1';
+      headerH3.style.display = 'block';
       messageContainer.style.height = '20%';
       messageContainer.style.width = '20%';
     }
@@ -110,6 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
     isDragging = true;
     offsetX = e.clientX - messageContainer.getBoundingClientRect().left;
     offsetY = e.clientY - messageContainer.getBoundingClientRect().top;
+
+     // Disable text selection during drag
+  document.body.style.userSelect = 'none';
   });
 
   window.addEventListener('mousemove', (e) => {
