@@ -99,6 +99,7 @@ main::-webkit-scrollbar-track{
     height: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 #photo-on-the-left {
     width: 40%;
@@ -507,14 +508,13 @@ footer img{
 /* Message Container */
 .message-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-    border: 1px solid #ccc;
+    top: 100px;
+    right: 100px;
+    border: 1px solid #F5CB86;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 200px;
-    height: 200px; /* Set a maximum height for the container */
+    width: 20%;
+    height: 20%; /* Set a maximum height for the container */
     overflow-y: auto; /* Enable vertical scrolling if messages exceed the height */
     transition: max-height 0.3s ease; /* Add smooth transition for max-height change */
   }
@@ -530,16 +530,15 @@ footer img{
     top: 5px;
     right: 5px;
     background-color: transparent;
-    color: #fff;
+    color: #F5CB86;
     border: none;
     padding: 5px 10px; /* Adjust size as needed */
     cursor: pointer;
     font-size: 12px; /* Adjust font size */
   }
   
-  /* Button Hover Effect */
-  .minimize-button:hover {
-    background-color: #0056b3;
-    border-radius: 15px;
-  }
-  
+.minimize-button:hover {
+  background-color: transparent;
+  border-radius: 5px;
+  transform: scale(1.2); /* Scale up the button on hover */
+}

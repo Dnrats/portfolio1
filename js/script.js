@@ -81,7 +81,7 @@ toggleButton.addEventListener('click', function() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const messageContainer = document.getElementById('messageContainer');
+  const messageContainer = document.querySelector('.message-container');
   const messageContent = document.getElementById('messageContent');
   const minimizeMessagesButton = document.getElementById('minimizeMessagesButton');
 
@@ -92,11 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
     isMinimized = !isMinimized;
 
     if (isMinimized) {
-      messageContainer.style.maxHeight = '40px'; // Adjust to your preferred minimized max-height
-      messageContent.style.display = 'none';
+      messageContent.style.opacity = '0';
+      messageContainer.style.height = '40px';
+      messageContainer.style.width = '40px';
     } else {
-      messageContainer.style.maxHeight = '200px'; // Adjust to your preferred max-height
-      messageContent.style.display = 'block';
+      messageContent.style.opacity = '1';
+      messageContainer.style.height = '20%';
+      messageContainer.style.width = '20%';
     }
   }
 
@@ -113,8 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
 
-    messageContainer.style.top = e.clientY - offsetY + 'px';
-    messageContainer.style.left = e.clientX - offsetX + 'px';
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const containerWidth = messageContainer.offsetWidth;
+    const containerHeight = messageContainer.offsetHeight;
+
+    const maxX = viewportWidth - containerWidth;
+    const maxY = viewportHeight - containerHeight;
+
+    const clampedX = Math.min(Math.max(e.clientX - offsetX, 0), maxX);
+    const clampedY = Math.min(Math.max(e.clientY - offsetY, 0), maxY);
+
+    messageContainer.style.top = clampedY + 'px';
+    messageContainer.style.left = clampedX + 'px';
   });
 
   window.addEventListener('mouseup', () => {
