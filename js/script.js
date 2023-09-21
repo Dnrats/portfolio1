@@ -59,24 +59,15 @@ function flipCard(button) {
 //  ICONS CONTAINER
 
 const toggleButton = document.getElementById('toggleButton');
-const myDiv = document.getElementById('myDiv');
+    const hiddenDiv = document.getElementById('hiddenDiv');
 
-toggleButton.addEventListener('click', function() {
-    if (myDiv.style.display === 'none') {
-        myDiv.style.display = 'block';
-        toggleButton.textContent = 'Hide';
-        setTimeout(() => {
-            myDiv.style.opacity = '1';
-        }, 10); // Delay for a tiny bit to allow display property to take effect
-    } else {
-        myDiv.style.opacity = '0';
-        setTimeout(() => {
-            myDiv.style.display = 'none';
-        }, 2000); // 2 seconds for the fade-out transition
-        toggleButton.textContent = 'Show';
-    }
-});
+    let isHidden = true;
 
+    toggleButton.addEventListener('click', () => {
+        isHidden = !isHidden;
+        hiddenDiv.style.display = isHidden ? 'none' : 'block';
+        toggleButton.textContent = isHidden ? 'Show' : 'Hide';
+    });
 // CHAT WIDGET
 
 
@@ -99,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       messageContainer.style.width = '40px';
     } else {
       messageContent.style.opacity = '1';
-      headerH3.style.display = 'block';
+       headerH3.style.display = 'block';
       messageContainer.style.height = '20%';
       messageContainer.style.width = '20%';
     }

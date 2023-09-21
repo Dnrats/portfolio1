@@ -439,72 +439,6 @@ footer img{
     width: 40px;
 }
 
-/* POPUP INFO BUTTON */
- 
-
-/* Styles for the new pop-up container */
-.text-container3 {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    transition: opacity 0.5s;
-}
-
-.text-container3.active {
-    display: flex;
-}
-
-.text-container3 p {
-    background-color: #051622;
-    text-align: center;
-    width: 70%;
-    height: 80%;
-    padding: 20px;
-    border-radius: 10px;
-    position: relative;
-    opacity: 1;
-    transition: opacity 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.text-container3 p.hidden {
-    display: none;
-}
-
-.close-popup3 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    color: #F5CB86;
-}
-#showTextButton3 {
-    position: fixed;
-    top: 10px; /* Adjust the top position as needed */
-    right: 10px; /* Adjust the right position as needed */
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 2;
-    opacity: 1; /* Initially visible */
-    transition: opacity 0.5s;
-}
-
-
-/* CHAT WIDGET */
-
 /* Message Container */
 .message-container {
     position: fixed;
@@ -558,4 +492,20 @@ footer img{
   background-color: transparent;
   border-radius: 5px;
   transform: scale(1.2); /* Scale up the button on hover */
+}
+
+
+/* TECHNOLOGIES CONTAINER */
+
+
+#hiddenDiv {
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    background-color: transparent; /* Set the background to transparent */
+    border: 1px solid #F5CB86; /* Add a 1px solid border with the desired color */
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

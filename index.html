@@ -46,10 +46,15 @@
   </div>
         <section id="landing-page">
             <div id="photo-on-the-left"><img  src="/assets/photo.jpg" alt="My photo"></div>
-            <div id="text-on-the-right"><div id="text1"><h3>Hi, I'm Artem</h3></div><div id="text2"><p>Full Stack Web Developer and UI/UX designer</p></div>
-            <button id="toggleButton">Show</button>
-            </div>
-            <div id="myDiv">This is the content of the div.</div>
+            <div id="text-on-the-right">
+                <div id="text1">
+                    <h3>Hi, I'm Artem</h3>
+                </div>
+                <div id="text2">
+                    <p>Full Stack Web Developer and UI/UX designer</p>
+                    <button id="toggleButton">Show</button>
+                </div>
+            <div class="hidden-div" id="hiddenDiv">Hidden Content</div>
         </section>
         <section id="projects">
         </div>
@@ -309,7 +314,6 @@
     </footer>    
     </main>
     <script>
-        const apiUrl = 'http://localhost:3000';
     </script> 
   <script src="/js/contact.js"></script>  
 <script src="https://smtpjs.com/v3/smtp.js"></script>
