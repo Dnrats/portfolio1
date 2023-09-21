@@ -29,7 +29,15 @@
         </div>
     </header>
     <main>
-        <!-- Add the popup container here -->
+        <div id="messageContainer" class="message-container">
+            <button id="minimizeMessagesButton" class="minimize-button"><i class="fa-solid fa-window-minimize"></i></button>
+            <div id="messageContent" class="message-content">
+              <!-- Messages will be displayed here -->
+            </div>
+          </div>
+          
+          
+             
   <div class="popup-container" id="popup-container">
     <div class="popup-content" id="popup-content">
       <img id="screenshot" src="" alt="Project Screenshot">
@@ -300,10 +308,13 @@
         <div> &#169; 2023 Artem Kh</div>
     </footer>    
     </main>
-     
+    <script>
+        const apiUrl = 'http://localhost:3000';
+    </script> 
   <script src="/js/contact.js"></script>  
 <script src="https://smtpjs.com/v3/smtp.js"></script>
-<script src="/js/script.js"></script>    
+<script src="/portfolio-backend/config.js"></script>
+<script  src="/js/script.js"></script>    
 <script src="/js/popup-info.js"></script>
 </body>
 </html>

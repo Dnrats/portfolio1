@@ -500,3 +500,46 @@ footer img{
     opacity: 1; /* Initially visible */
     transition: opacity 0.5s;
 }
+
+
+/* CHAT WIDGET */
+
+/* Message Container */
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 200px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scrolling if messages exceed the height */
+    transition: max-height 0.3s ease; /* Add smooth transition for max-height change */
+  }
+  
+  /* Message Content */
+  .message-content {
+    padding: 10px;
+  }
+  
+  /* Minimize Button */
+  .minimize-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; /* Adjust size as needed */
+    cursor: pointer;
+    font-size: 12px; /* Adjust font size */
+  }
+  
+  /* Button Hover Effect */
+  .minimize-button:hover {
+    background-color: #0056b3;
+    border-radius: 15px;
+  }
+  

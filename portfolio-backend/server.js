@@ -8,6 +8,9 @@ import bodyParser from 'body-parser';
 import { dbConfig } from './config.js'; 
 import session from 'express-session'; // Import express-session
 import { sessionSecret } from './secrets.js';
+import cors from 'cors'; // Import the cors middleware
+import { secretAuthToken } from './config.js';
+
 
 // Obtain the directory path of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -18,6 +21,7 @@ const app = express();
 const port = 3000;
 // Configure body-parser to handle JSON data
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(
   session({
@@ -27,6 +31,11 @@ app.use(
   })
 );
 
+// Add a new route to retrieve the secret token
+app.get('/get-secret-token', (req, res) => {
+  res.json({ secretToken: secretAuthToken });
+});
+
 // Define a route for the homepage
 app.get('/', (req, res) => {
   // Use path.join to create a file path to your HTML file
@@ -35,12 +44,9 @@ app.get('/', (req, res) => {
 
 app.use('/Css', express.static(path.join(__dirname, 'Css')));
 
-// ... (other imports and setup)
-
 // POST route for handling user login
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
-  console.log('Stage 1');
 
   // Query the database to verify admin user's credentials
   db.query('SELECT * FROM admin_user WHERE username = ?', [username], async (err, results) => {
@@ -52,11 +58,6 @@ app.post('/login', (req, res) => {
     if (results.length === 0) {
       return res.status(401).json({ success: false, message: 'Authentication failed' });
     }
-    console.log('Stage 2');
-
-    // Compare the hashed password with the provided password
-    // const storedPassword = results[0].password;
-    // const passwordsMatch = await bcrypt.compare(password, storedPasswordHash);
 
     // Instead of bcrypt, store the plain text password in the session
     const storedPassword = results[0].password;
@@ -72,10 +73,6 @@ app.post('/login', (req, res) => {
     }
   });
 });
-
-// ... (other middleware and routes)
-
-console.log('Stage 4');
 
 // Send to dashboard if connection is successful
 app.get('/dashboard', isAuthenticated, (req, res) => {
@@ -99,11 +96,6 @@ function isAuthenticated(req, res, next) {
     res.status(401).json({ message: 'Unauthorized' });
   }
 }
-
-// Send to dashboard if connection is successful
-app.get('/dashboard', isAuthenticated, (req, res) => {
-  res.sendFile(path.join(__dirname, 'dashboard.html'));
-});
 
 
 

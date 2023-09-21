@@ -2,9 +2,6 @@ let buttons = document.querySelectorAll('.buttons')
 buttons.forEach(button => {
    button.addEventListener('click', flipCard);
  });
-function flipCard() {
-   card.classList.toggle('flipCard')
-}
 function flipCard(button) {
    // Find the parent card element of the clicked button
    const card = button.closest('.card');
@@ -12,6 +9,7 @@ function flipCard(button) {
    // Toggle the 'flipCard' class for the specific card
    card.classList.toggle('flipCard');
  }
+
 
  const imageSources = [
    './assets/Happy-Health1.png',
@@ -77,4 +75,52 @@ toggleButton.addEventListener('click', function() {
         }, 2000); // 2 seconds for the fade-out transition
         toggleButton.textContent = 'Show';
     }
+});
+
+// CHAT WIDGET
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const messageContainer = document.getElementById('messageContainer');
+  const messageContent = document.getElementById('messageContent');
+  const minimizeMessagesButton = document.getElementById('minimizeMessagesButton');
+
+  let isMinimized = false;
+
+  // Function to toggle minimize/maximize the message container
+  function toggleMessageContainer() {
+    isMinimized = !isMinimized;
+
+    if (isMinimized) {
+      messageContainer.style.maxHeight = '40px'; // Adjust to your preferred minimized max-height
+      messageContent.style.display = 'none';
+    } else {
+      messageContainer.style.maxHeight = '200px'; // Adjust to your preferred max-height
+      messageContent.style.display = 'block';
+    }
+  }
+
+  // Function to make the message container draggable
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  messageContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - messageContainer.getBoundingClientRect().left;
+    offsetY = e.clientY - messageContainer.getBoundingClientRect().top;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    messageContainer.style.top = e.clientY - offsetY + 'px';
+    messageContainer.style.left = e.clientX - offsetX + 'px';
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  // Add a click event listener to the minimize button
+  minimizeMessagesButton.addEventListener('click', toggleMessageContainer);
 });
