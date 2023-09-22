@@ -58,7 +58,7 @@ function flipCard(button) {
 
 //  ICONS CONTAINER
 
-const toggleButton = document.getElementById('toggleButton');
+    const toggleButton = document.getElementById('showTechnologies');
     const hiddenDiv = document.getElementById('hiddenDiv');
 
     let isHidden = true;
