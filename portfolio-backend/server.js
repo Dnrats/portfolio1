@@ -200,3 +200,18 @@ app.use(express.static(path.join(__dirname)));
 
 app.use('/Javascript', express.static(path.join(__dirname, 'Javascript')));
 
+
+app.get('/display-messages', isAuthenticated, (req, res) => {
+  // Fetch messages from the database using the /get-messages endpoint
+  const messagesEndpoint = 'https://dnrats.com/get-messages'; // Update the URL if necessary
+  fetch(messagesEndpoint)
+    .then(response => response.json())
+    .then(messages => {
+      // Render your HTML template or page with the fetched messages
+      res.render('messages', { messages }); // You need to set up your template engine (e.g., EJS, Pug) to render messages.
+    })
+    .catch(error => {
+      console.error('Error fetching messages:', error);
+      res.status(500).json({ success: false, message: 'Error fetching messages' });
+    });
+});

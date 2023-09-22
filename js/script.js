@@ -157,3 +157,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add a click event listener to the minimize button
   minimizeMessagesButton.addEventListener('click', toggleMessageContainer);
 });
+
+// FETCHING MESSAGES
+
+
+const messagesEndpoint = 'https://dnrats.com/get-messages'; // Update with your actual URL
+
+fetch(messagesEndpoint)
+  .then(response => response.json())
+  .then(messages => {
+    // Get a reference to the message content div
+    const messageContentDiv = document.getElementById('messageContent');
+
+    // Loop through the fetched messages and create message elements
+    messages.forEach(message => {
+      // Create a message element
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message-item'); // You can style this class in your CSS
+
+      // Create message content elements
+      const messageText = document.createElement('p');
+      messageText.textContent = message.text;
+
+      const messageDate = document.createElement('p');
+      messageDate.textContent = message.date;
+
+      // Append message content elements to the message element
+      messageElement.appendChild(messageText);
+      messageElement.appendChild(messageDate);
+
+      // Append the message element to the message content div
+      messageContentDiv.appendChild(messageElement);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching messages:', error);
+  });
