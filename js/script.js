@@ -106,16 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isMinimized) {
       messageContent.style.opacity = '0';
-      headerH3.style.display = 'none';
+
       messageContainer.style.height = '40px';
-      messageContainer.style.width = '40px';
+      messageContainer.style.width = '250px';
     } else {
       messageContent.style.opacity = '1';
-       headerH3.style.display = 'block';
+
       messageContainer.style.height = '20%';
       messageContainer.style.width = '20%';
     }
   }
+
+  toggleMessageContainer();
 
   // Function to make the message container draggable
   let isDragging = false;

@@ -120,20 +120,24 @@ main::-webkit-scrollbar-track{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin-left: 10%;
+    margin-left: 5%;
 } 
 #text1 {
-    width: 50%;
+    width: 60%;
     height: 30%;
     text-shadow: 1px 1px 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #text2 {
     width: 60%;
-    height: 50%;
+    height: 60%;
     text-shadow: 1px 1px 2px black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
 }
 #text-on-the-right h3 {
     font-size:  4rem;
@@ -462,12 +466,14 @@ footer img{
     top: 100px;
     right: 100px;
     border: 1px solid #F5CB86;
+    background: rgba(245, 202, 132, 0.20);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 20%;
     height: 20%; /* Set a maximum height for the container */
     overflow-y: auto; /* Enable vertical scrolling if messages exceed the height */
     transition: max-height 0.3s ease; /* Add smooth transition for max-height change */
+    z-index: 999;
   }
 
 /* Add position: absolute to the header and button */
@@ -516,19 +522,19 @@ footer img{
 
 #showTechnologies{
     width: 30%;
-    height: 20%;
+    height: 15%;
     background: none;
     border: 1px solid #F5CB86;
     color: #F5CB86;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 20px;
 }
 #downloadCV {
     width: 30%;
-    height: 20%;
+    height: 15%;
     background: none;
     border: 1px solid #F5CB86;
     color: #F5CB86;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 20px;
 }
