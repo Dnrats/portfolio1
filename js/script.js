@@ -58,16 +58,36 @@ function flipCard(button) {
 
 //  ICONS CONTAINER
 
-    const toggleButton = document.getElementById('showTechnologies');
-    const hiddenDiv = document.getElementById('hiddenDiv');
+const showTechnologiesButton = document.getElementById('showTechnologies');
+const hiddenDiv = document.getElementById('hiddenDiv');
+const images = hiddenDiv.querySelectorAll('img');
 
-    let isHidden = true;
+let isHidden = true;
 
-    toggleButton.addEventListener('click', () => {
-        isHidden = !isHidden;
-        hiddenDiv.style.display = isHidden ? 'none' : 'block';
-        toggleButton.textContent = isHidden ? 'Show' : 'Hide';
-    });
+showTechnologiesButton.addEventListener('click', () => {
+    isHidden = !isHidden;
+    hiddenDiv.style.display = isHidden ? 'none' : 'flex';
+    showTechnologiesButton.textContent = isHidden ? 'Show' : 'Hide';
+
+    if (!isHidden) {
+        // If showing, start fading in the images
+        images.forEach((image, index) => {
+            setTimeout(() => {
+                image.style.opacity = 1;
+                image.style.filter = 'blur(0)';
+            }, index * 400); // Adjust the delay between each image fading in
+        });
+    } else {
+        // If hiding, reset the image opacity and blur
+        images.forEach((image) => {
+            image.style.opacity = 0;
+            image.style.filter = 'blur(10px)';
+        });
+    }
+});
+
+
+
 // CHAT WIDGET
 
 

@@ -154,10 +154,14 @@ main::-webkit-scrollbar-track{
     height: 20%;
     background-color: transparent; /* Set the background to transparent */
     border: 1px solid #F5CB86; /* Add a 1px solid border with the desired color */
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     border-radius: 10px;
     justify-content: space-evenly;
+}
+#hiddenDiv img {
+    opacity: 0;
+    transition: opacity 1s ease-in-out, filter 1s ease-in-out;
 }
 
 #projects{
