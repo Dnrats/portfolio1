@@ -1,135 +1,98 @@
-.card{
+.wrapper {
     width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 1.5s ease;
-}
-.card.flip {
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-  }
-.front{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    /* background: linear-gradient(135deg, #f4a6c3, #ffdab9); Soft Pink to Light Apricot Gradient: */
-    background: linear-gradient(135deg, #b7a1c4, #f3e5ab);  /*  Dusty Lavender to Vanilla Gradient: */
-    /* background: linear-gradient(135deg, #f5b7b1, #fffacd); Rose Quartz to Buttercream Gradient: */
-    /* background: linear-gradient(135deg, #c8a2c8, #fff4e0); Lilac to Cream Gradient: */
-    /* background: linear-gradient(135deg, #b184a7, #ffdab9); Mauve to Soft Peach Gradient: */
-    color: black;
-    text-align: center;
-    -webkit-box-shadow: 12px 12px 25px 5px rgba(0,0,0,0.4); 
-    box-shadow: 12px 12px 25px 5px rgba(0,0,0,0.4);
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    border-radius: 10px;
+    justify-content: center;
 }
-.front h2{
-    letter-spacing: 1px;
-	 color: #051622;
-	 font-weight: 500;
-	 text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-     font-size: 2rem; 
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
 }
-.buttons{
-    width: 50%;
-    height: 20%;
-    background: none;
-    text-transform: uppercase;
-	 letter-spacing: 1px;
-	 cursor: pointer;
-     justify-content: center;
-     align-items: center;
-	 border: solid 2px #051622;
-	 color: #051622;
-	 border-radius: 15px;
-	 text-align: center;
-	 transition: 0.3s ease-in-out;
-     font-family: 'Cormorant Garamond';
-    font-weight: bold;
-    backface-visibility: hidden;
+
+.card {
+    width: 150px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: grid;
+    grid-template: 1fr/3fr/1fr/3fr;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
 }
-.buttons:hover {
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    text-shadow: none;
-}
-.back{
-    position: absolute;
-    width: 100%;
+
+.languagesUsed{
+    width: 20%;
     height: 100%;
-    backface-visibility: hidden;
-    background: linear-gradient(135deg, #b7a1c4, #f3e5ab);
+}
+
+.card > .row {
     color: white;
-    text-align: center;
-    transform: rotateY(180deg);
-    -webkit-box-shadow: 12px 12px 25px 5px rgba(0,0,0,0.4); 
-    box-shadow: 12px 12px 25px 5px rgba(0,0,0,0.4);
-    border-radius: 10px;
     display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    height: 50px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: space-around;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
 }
-.flipCard{
-    transform: rotateY(180deg);
-    transition: all 1,5s ease;
+
+.description p {
+    color: #b0b0ba;
+    padding-top: 5px;
 }
-#links{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 2em;
-    align-items: center;
-    margin-top: 5px;
+
+.description h4 {
+    text-transform: uppercase;
 }
-#links i{
-font-size: 2rem;
-color: #051622;
+
+input {
+    display: none;
 }
-#place-for-button{
-    height: 20%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+input:checked + label {
+    width: 600px;
 }
-#place-for-button button{
-width: 40%;
-height: 80%;
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
-#text{
-    height: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.card[for="c1"] {
+    background-image: url('/assets/img/Happy-Health1.png');
 }
-#text p{
-    margin: 10px;
-    width: 100%;
-    height: 80%;
-    overflow-y: scroll;
-    align-items: flex-start;
-    color: #051622;
-    padding: 5px;
-    letter-spacing: 0.8px;
-    font-size: 1.2em;
+.card[for="c2"] {
+    background-image: url('./img2.jpeg');
 }
-#text p::-webkit-scrollbar{
-    width: 10px;
-    overflow-y: auto;
-    margin-left: 5px;
+.card[for="c3"] {
+    background-image: url('./img3.jpeg');
 }
-#text p::-webkit-scrollbar-track{
-    border-radius: 10px;
-}
-#text p::-webkit-scrollbar-thumb{
-    background-color: #051622;
-    border-radius: 10px;
-    height: 20px;
+.card[for="c4"] {
+    background-image: url('./img4.jpeg');
 }

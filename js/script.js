@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // FETCHING MESSAGES
-
+// Allow requests from your frontend domain
 
 const messagesEndpoint = 'https://dnrats.com/get-messages'; // Update with your actual URL
 

@@ -73,228 +73,45 @@
           </div>  
         </section>
         <section id="projects">
-            <div id="first-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2>Happy Health</h2>
-                        <button id="details" class="buttons " onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image" data-target="1"></i>
-                            <i class="fa-solid  fa-earth-europe"></i>
-                            <a href="https://github.com/Dnrats/Happy-Health" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <div class="wrapper">
+                <div class="container">
+                    <input type="radio" name="slide" id="c1" checked>
+                    <label for="c1" class="card">
+                        <div class="languagesUsed"><i class="fa-brands fa-js card-icons"></i><i class="fa-brands fa-php card-icons"></i></div>
+
+                    </label>
+                    <input type="radio" name="slide" id="c2" >
+                    <label for="c2" class="card">
+                        <div class="row">
+                            <div class="icon">2</div>
+                            <div class="description">
+                                <h4>Digital Technology</h4>
+                                <p>Gets better every day -
+                                 stay tuned</p>
+                            </div>
                         </div>
-                        <div id="text"><p>The project "Happy Health" is a group project. Our coach gave us a mock-up that we had to integrate. 
-                            The purpose of the site is to take data from open sources and show it via interactive boxes. 
-                            The data that we used was health and happiness scores by country from 2015 to our days. 
-                            We also had to implement random life advices in the box at the bottom. These advices could be taken from a website via API. 
-                            I mostly worked on the front part of the site and also on integrating Chart.js to show stats.</p></div>
-                         <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
+                    </label>
+                    <input type="radio" name="slide" id="c3" >
+                    <label for="c3" class="card">
+                        <div class="row">
+                            <div class="icon">3</div>
+                            <div class="description">
+                                <h4>Globalization</h4>
+                                <p>Help people all over the world</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div id="second-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2>Contact Form</h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image" data-target="2"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href="https://github.com/Dnrats/Contact-form" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </label>
+                    <input type="radio" name="slide" id="c4" >
+                    <label for="c4" class="card">
+                        <div class="row">
+                            <div class="icon">4</div>
+                            <div class="description">
+                                <h4>New technologies</h4>
+                                <p>Space engineering becomes
+                                 more and more advanced</p>
+                            </div>
                         </div>
-                        <div id="text">
-                            <p>Contact form was one of our first serious projects. We had to do a mock-up and code a fully functional contact form. It was a solo project, so I worked alone.
-                            I used PHP for this project in order to retrieve form data and send it, contrary to my current contact form in the portfolio where I integrated a JavaScript library Smtp.js.</p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="third-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2>Marvel tv-shows API</h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image" data-target="3"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href="https://github.com/Dnrats/Marvel" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p>The goal of this project was to create a simple website which shows 
-                                Marvel tv-shows for those who are bored. The main idea was to learn how to use API by taking someone else's data and integrating it on 
-                                your website. This was also a group project and we were 3 to work on it. We divided our tasks, so there was one guy who worked on API analysis, and integration. And me and another guy 
-                                worked on visual aspect of the site and JavaScript behind it. Tho things got messy at some point because one of the participants had some problems and disappeared for more than a week, so
-                                we had to finish it as a group of 2.</p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button2" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="fourth-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2>Pick up sticks game</h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image" data-target="4"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href="https://github.com/Dnrats/Jeu-des-Batonnets" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p>In this project we developped a mini game purely with JavaScript. This game is a variation of a famous game used in the french TV-show Fort Boyard. 
-                                We had to create this game from scratch but we could use any examples from the internet that we find. It was a group project and we were 3 to work on it.
-                                I mostly worked on the visual part and integration. The JavaScript part with loops and functions was taken by another guy who didnt like front and mock-ups.
-                                We finished by creating a first version of the game and presented it to everyone else. There's a catch tho. Unfortunately i got no idea how, but the code was lost in the process. 
-                                Not entirely, only the final version. And what i have on github is an incomplete version of it. So i can only show you an image of my prototypes in figma.
-                            </p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="fifth-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2></h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image open-popup"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p></p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="sixth-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2></h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image open-popup"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p></p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="seventh-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2></h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image open-popup"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p></p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="eighth-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2></h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image open-popup" data-target="popup2"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href=""><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p></p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="ninth-box">
-                <div class="card" id="card">
-                    <div class="front">
-                        <h2>Restaurant website</h2>
-                        <button id="details" class="buttons" onclick="flipCard(this)">Details</button>
-                    </div>
-                    <div class="back">
-                        <div id="links">
-                            <i class="fa-regular fa-image" data-target="9"></i>
-                            <i class="fa-solid fa-earth-europe"></i>
-                            <a href="https://github.com/Dnrats/projet_restaurant" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                        <div id="text">
-                            <p>This project was a big one. It was so big that we didnt actually finish it. The task that we had was to create a restaurant website. We could choose anything that we wanted.
-                                We had to make a mock up(in Figma), and then create the website from scratch. It was supposed to be fully functional website. Except the reservation part. But we had to have a back-office
-                                to be able to add new items and remove the existing ones. So i'd say it was a big amount of work. As you might've guess by now it was also a group project. We were 3 to work on it. 
-                                We used a template to facilitate the task for the html and css structure. But obviously we had to create a visual identity of our own. I mostly worked on the visual part of both main site and back-office,
-                                and back-office menu to add and remove items.
-                            </p>
-                        </div>
-                        <div id="place-for-button">
-                            <button id="back-button" class="buttons" onclick="flipCard(this)">
-                                <i class="fa-solid fa-arrow-left x"></i>
-                            </button>
-                        </div>
-                    </div>
+                    </label>
                 </div>
             </div>
         </section>

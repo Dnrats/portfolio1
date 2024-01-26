@@ -21,7 +21,19 @@ const app = express();
 const port = 3000;
 // Configure body-parser to handle JSON data
 app.use(bodyParser.json());
-app.use(cors());
+
+const whitelist = ['https://www.dnrats.com']; 
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+app.use(cors(corsOptions));
 
 app.use(
   session({
@@ -101,8 +113,8 @@ function isAuthenticated(req, res, next) {
 
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(() => {
+  console.log('Server is running.');
 });
 
 
@@ -201,17 +213,17 @@ app.use(express.static(path.join(__dirname)));
 app.use('/Javascript', express.static(path.join(__dirname, 'Javascript')));
 
 
-app.get('/display-messages', isAuthenticated, (req, res) => {
-  // Fetch messages from the database using the /get-messages endpoint
-  const messagesEndpoint = 'https://dnrats.com/get-messages'; // Update the URL if necessary
-  fetch(messagesEndpoint)
-    .then(response => response.json())
-    .then(messages => {
-      // Render your HTML template or page with the fetched messages
-      res.render('messages', { messages }); // You need to set up your template engine (e.g., EJS, Pug) to render messages.
-    })
-    .catch(error => {
-      console.error('Error fetching messages:', error);
-      res.status(500).json({ success: false, message: 'Error fetching messages' });
-    });
-});
+// app.get('/display-messages', isAuthenticated, (req, res) => {
+//   // Fetch messages from the database using the /get-messages endpoint
+//   const messagesEndpoint = 'https://dnrats.com/get-messages'; // Update the URL if necessary
+//   fetch(messagesEndpoint)
+//     .then(response => response.json())
+//     .then(messages => {
+//       // Render your HTML template or page with the fetched messages
+//       res.render('messages', { messages }); // You need to set up your template engine (e.g., EJS, Pug) to render messages.
+//     })
+//     .catch(error => {
+//       console.error('Error fetching messages:', error);
+//       res.status(500).json({ success: false, message: 'Error fetching messages' });
+//     });
+// });
