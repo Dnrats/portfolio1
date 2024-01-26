@@ -1,98 +1,33 @@
-.wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
-    height: 400px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-}
-
-.card {
-    width: 150px;
-    border-radius: .75rem;
-    background-size: cover;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 2rem;
-    margin: 0 10px;
-    display: grid;
-    grid-template: 1fr/3fr/1fr/3fr;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-}
-
-.languagesUsed{
-    width: 20%;
-    height: 100%;
-}
-
-.card > .row {
-    color: white;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.card > .row > .icon {
-    background: #223;
-    color: white;
-    border-radius: 50%;
-    width: 50px;
+/* Basic styles for the Swiper container */
+.swiper-container {
+    width: 50%;
+    height: 75%;
+  }
+  
+  /* Styles for individual slides */
+  .swiper-slide {
+    background-color: #fff; /* Set the background color of the slides */
+    border: 1px solid #ccc; /* Add a border to the slides */
+    border-radius: 8px; /* Add border radius for a rounded appearance */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px;
-    height: 50px;
-}
-
-.card > .row > .description {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    height: 80px;
-    width: 520px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition-delay: .3s;
-    transition: all .3s ease;
-}
-
-.description p {
-    color: #b0b0ba;
-    padding-top: 5px;
-}
-
-.description h4 {
-    text-transform: uppercase;
-}
-
-input {
-    display: none;
-}
-
-input:checked + label {
-    width: 600px;
-}
-
-input:checked + label .description {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-.card[for="c1"] {
-    background-image: url('/assets/img/Happy-Health1.png');
-}
-.card[for="c2"] {
-    background-image: url('./img2.jpeg');
-}
-.card[for="c3"] {
-    background-image: url('./img3.jpeg');
-}
-.card[for="c4"] {
-    background-image: url('./img4.jpeg');
-}
+    font-size: 24px;
+  }
+  
+  /* Pagination styles */
+  .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Optional: Adjust styles for the active slide */
+  .swiper-slide-active {
+    background-color: #f0f0f0; /* Set a different background color for the active slide */
+    color: #333; /* Set a different text color for the active slide */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
