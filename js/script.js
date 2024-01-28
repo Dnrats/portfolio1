@@ -21,6 +21,38 @@ const swiper = new Swiper('.swiper-container', {
   speed: 500, // Set the transition speed in milliseconds (default is 300)
 });
 
+//  ICONS CONTAINER
+
+const showTechnologiesButton = document.getElementById('showTechnologies');
+    const hiddenDiv = document.getElementById('hiddenDiv');
+    const images = hiddenDiv.querySelectorAll('img');
+
+    let isHidden = true;
+
+    showTechnologiesButton.addEventListener('click', () => {
+        isHidden = !isHidden;
+        hiddenDiv.style.display = isHidden ? 'none' : 'flex';
+        showTechnologiesButton.textContent = isHidden ? 'Show Stack' : 'Hide';
+
+        if (!isHidden) {
+            // If showing, reset the image opacity and blur
+            images.forEach((image) => {
+                image.style.opacity = 0;
+                image.style.filter = 'blur(10px)';
+            });
+
+            // After a small delay, start fading in the images sequentially from left to right
+            setTimeout(() => {
+                images.forEach((image, index) => {
+                    setTimeout(() => {
+                        image.style.opacity = 1;
+                        image.style.filter = 'blur(0)';
+                    }, index * 400); // Adjust the delay between each image fading in
+                });
+            }, 50); // Delay before starting the fade-in effect
+        }
+    });
+
 // CHAT WIDGET
 
 

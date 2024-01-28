@@ -385,6 +385,7 @@ footer img{
     overflow-y: auto; /* Enable vertical scrolling if messages exceed the height */
     transition: max-height 0.3s ease; /* Add smooth transition for max-height change */
     z-index: 999;
+    display: none;
   }
 
 /* Add position: absolute to the header and button */
