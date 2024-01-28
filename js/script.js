@@ -21,6 +21,9 @@ const swiper = new Swiper('.swiper-container', {
   speed: 500, // Set the transition speed in milliseconds (default is 300)
 });
 
+
+
+
 //  ICONS CONTAINER
 
 const showTechnologiesButton = document.getElementById('showTechnologies');
