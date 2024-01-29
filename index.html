@@ -95,7 +95,7 @@
                             <img src="/assets/icons/logos_mysql.svg" alt="" srcset="">
                             <img src="/assets/icons/vscode-icons_file-type-js-official.svg" alt="" srcset="">
                             <a href="https://github.com/Dnrats/Happy-Health" target="_blank"><img src="/assets/icons/devicon_github-wordmark.svg" alt="" srcset=""></a>
-                            <a href=""><img src="/assets/icons/clarity_world-line.svg" alt="" srcset=""></a>
+                            <a href="https://www.dnrats.com/happy-health" target="_blank"><img src="/assets/icons/clarity_world-line.svg" alt="" srcset=""></a>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -154,11 +154,12 @@
                         <h2>Contact</h2>
                     </div>
                     <div id="contact-fields">
-                        <form>
-                            <input type="text" placeholder="Name" id="Name">
-                            <input type="email" placeholder="E-mail" id="Email">
-                            <textarea placeholder="Message" id="Message" cols="20" rows="10"></textarea>
-                            <button id="Send">Send</button>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="text" name="name" placeholder="Name" id="Name">
+                            <input type="email" name="email" placeholder="E-mail" id="Email">
+                            <textarea placeholder="Message" name="message" id="Message" cols="20" rows="10"></textarea>
+                            <input type="hidden" name="access_key" value="927b0167-def6-49b3-9c30-ffdd1d9ffb19">
+                            <button id="Send" type="submit">Send</button>
                         </form>
                     </div>
             </div>
