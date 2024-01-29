@@ -104,3 +104,19 @@ height: 100%;
 .swiper-slide:not(.swiper-slide-active) img:hover {
   filter: brightness(90%); /* Add brightness effect on hover */
 }
+
+@media (max-width: 450px) {
+  .swiper-container {
+      width: 90%;
+      height: 40%;
+  }
+
+  .swiper-slide {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+  }
+  .slide-info-bar img{
+    width: 10%;
+    height: 90%;
+  }
+}
