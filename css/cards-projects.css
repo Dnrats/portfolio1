@@ -70,30 +70,6 @@ height: 100%;
 .slide-info-bar h3{
   display: flex;
 }
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #fff;
-  font-size: 24px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.swiper-button-next { right: 10px; }
-.swiper-button-prev { left: 10px; }
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
 .swiper-slide:not(.swiper-slide-active) {
   backdrop-filter: blur(8px); /* Adjust the blur amount as needed */
   pointer-events: none; /* Make non-active slides non-interactive */
@@ -119,4 +95,8 @@ height: 100%;
     width: 10%;
     height: 90%;
   }
+  .swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
 }

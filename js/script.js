@@ -24,6 +24,19 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 
+// SHOW CV
+
+ // Function to open the CV in a new window
+ function openCV() {
+    // Replace 'path/to/your/cv.pdf' with the actual path to your CV file
+    const cvPath = '/assets/CV.pdf';
+    
+    // Open the CV in a new window
+    window.open(cvPath, '_blank');
+  }
+
+  // Add onclick event to the button
+  document.getElementById('downloadCV').onclick = openCV;
 
 
 //  ICONS CONTAINER

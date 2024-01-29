@@ -55,8 +55,8 @@
                 </div>
                 <div id="text2">
                     <p>Full Stack Web Developer and UI/UX designer</p>
-                    <button id="showTechnologies">Show Stack</button>
-                    <button id="downloadCV">Download CV</button>
+                    <button class="buttons" id="showTechnologies">Show Stack</button>
+                    <button class="buttons" id="downloadCV">Show CV</button>
                 </div>
             </div>
             <div class="hidden-div" id="hiddenDiv">
@@ -155,11 +155,11 @@
                     </div>
                     <div id="contact-fields">
                         <form action="https://api.web3forms.com/submit" method="POST">
-                            <input type="text" name="name" placeholder="Name" id="Name">
-                            <input type="email" name="email" placeholder="E-mail" id="Email">
-                            <textarea placeholder="Message" name="message" id="Message" cols="20" rows="10"></textarea>
+                            <input type="text" name="name" placeholder="Name" id="Name" required>
+                            <input type="email" name="email" placeholder="E-mail" id="Email" required>
+                            <textarea placeholder="Message" name="message" id="Message" cols="20" rows="10" required></textarea>
                             <input type="hidden" name="access_key" value="927b0167-def6-49b3-9c30-ffdd1d9ffb19">
-                            <button id="Send" type="submit">Send</button>
+                            <button class="buttons" id="Send" type="submit">Send</button>
                         </form>
                     </div>
             </div>
