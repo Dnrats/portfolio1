@@ -31,18 +31,20 @@ height: 60%;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
 }
 #photo-on-the-left{
     width: 80%;
-    height: 50%;
+    height: 40%;
 }
 #photo-on-the-left img{
-    width: 225px;
-    height: 300px;
+    width: 60%;
+    height: 100%;
 }
 #text-on-the-right{
     width: 80%;
-    height: 40%;
+    height: 35%;
     margin: 0;
     display: flex;
 }
@@ -56,35 +58,54 @@ height: 60%;
 }
 #text2{
     width: 100%;
-    height: 50%;
+    height: 70%;
     display: flex;
     justify-content: center;
     text-align: center;
     }
 #text-on-the-right h3{
-    font-size: 2.5rem;
+    font-size: 2rem;
     }
     #text-on-the-right p{
-    font-size: 1.9em;
+    font-size: 1.3em;
     padding:  5px;
+    width: 70%;
     }
 #showTechnologies{
     margin: 10px;
     height: 30%;
     width: 40%;
+    font-size: 0.8em;
 }
 #downloadCV{
     margin: 10px;
     height: 30%;
     width: 40%;
+    font-size: 0.8em;
+}
+#hiddenDiv {
+    width: 90%;
+    height: 20%;
+    background-color: transparent; /* Set the background to transparent */
+    border: 1px solid #F5CB86; /* Add a 1px solid border with the desired color */
+    display: none;
+    background-color: rgba(35, 161, 251, 0.13);
+    flex-wrap: wrap;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+#hiddenDiv img{
+    width: 10%;
+    height: 20%;
+    margin: 10px;
 }
 #projects{
     width: 100%;
     height: 90%;
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-template-rows: 1fr 1fr 1fr;
-    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
 }
+
 #contact{
     width: 100vw;
     height: 100vh;
@@ -260,10 +281,6 @@ h2{
 #left-part-logo img{
 height: 60%;
 }
-.swiper-container {
-    width: 90%;
-    height: 35%;
-}
 #showTechnologies{
     margin: 10px;
     height: 30%;
@@ -282,15 +299,15 @@ height: 60%;
 }
 #photo-on-the-left{
     width: 100%;
-    height: 50%;
+    height: 40%;
 }
 #photo-on-the-left img{
-    width: 250px;
-    height: 350px;
+    width: 50%;
+    height: 85%;
 }
 #text-on-the-right{
     width: 80%;
-    height: 40%;
+    height: 35%;
     margin: 0;
     display: flex;
 }
@@ -309,21 +326,38 @@ height: 60%;
     align-items: center;
     }
     #text-on-the-right h3{
-    font-size: 3rem;
+    font-size: 2em;
     }
     #text-on-the-right p{
-    font-size: 2rem;
+    font-size: 1.5em;
     width: 100%;
+}
+#text2 p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#hiddenDiv {
+    width: 90%;
+    height: 20%;
+    background-color: transparent; /* Set the background to transparent */
+    border: 1px solid #F5CB86; /* Add a 1px solid border with the desired color */
+    display: none;
+    background-color: rgba(35, 161, 251, 0.13);
+    flex-wrap: wrap;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+#hiddenDiv img{
+    width: 10%;
+    height: 20%;
+    margin: 10px;
 }
 #projects{
     width: 100%;
     height: 90%;
     grid-template-columns: 200px 200px 200px 200px 200px;
     grid-template-rows: 1fr 1fr 1fr;
-    overflow-x: scroll;
 }
 #contact{
     width: 100vw;
@@ -514,7 +548,6 @@ height: 60%;
 #projects{
     width: 100%;
     height: 90%;
-    overflow-x: scroll;
 }
 #contact{
     width: 100vw;
