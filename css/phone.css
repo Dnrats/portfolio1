@@ -39,8 +39,8 @@ height: 60%;
     height: 40%;
 }
 #photo-on-the-left img{
-    width: 60%;
-    height: 100%;
+    width: 200px;
+    height: 275px;
 }
 #text-on-the-right{
     width: 80%;
@@ -150,7 +150,7 @@ height: 60%;
     justify-content: space-evenly;
 }
 .fa-brands{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 #left-part-contact{
     width: 100%;
@@ -170,7 +170,7 @@ height: 60%;
 }
 #contact-title h2{
     font-style: italic;
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 1px 1px 2px black;
     width: 100%;
 }
@@ -320,17 +320,18 @@ height: 60%;
 }
 #text2{
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center;
     }
     #text-on-the-right h3{
-    font-size: 2em;
+    font-size: 2rem;
     }
     #text-on-the-right p{
-    font-size: 1.5em;
-    width: 100%;
+    font-size: 1.5rem;
+    width: 70%;
+    padding: 5px;
 }
 #text2 p{
     display: flex;
@@ -403,7 +404,7 @@ height: 60%;
     justify-content: space-evenly;
 }
 .fa-brands{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 #left-part-contact{
     width: 100%;
@@ -423,7 +424,7 @@ height: 60%;
 }
 #contact-title h2{
     font-style: italic;
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 1px 1px 2px black;
     width: 100%;
 }
@@ -533,17 +534,18 @@ height: 60%;
 }
 #text2{
     width: 100%;
-    height: 50%;
+    height: 70%;
     display: flex;
     justify-content: center;
     text-align: center;
     }
     #text-on-the-right h3{
-    font-size: 3rem;
+    font-size: 2rem;
     }
     #text-on-the-right p{
-    font-size: 2rem;
-    width: 100%;
+    font-size: 1.1rem;
+    width: 70%;
+    padding: 5px;
 }
 #projects{
     width: 100%;

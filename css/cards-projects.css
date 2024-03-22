@@ -89,6 +89,10 @@ height: 100%;
 .slide-info-bar{
   height: 15%;
 }
+.slide-info-bar img{
+  height: 60%;
+  width: 10%;
+}
  
   
 
@@ -102,4 +106,21 @@ height: 100%;
     width: 90%;
     height: 80%;
 }
+}
+
+@keyframes blink {
+  0% {
+      border-color: transparent;
+  }
+  50% {
+      border-color: #051622; /* Change to the desired border color */
+  }
+  100% {
+      border-color: transparent;
+  }
+}
+
+.border-blink {
+  border: 2px solid transparent;
+  animation: blink 6s infinite;
 }
