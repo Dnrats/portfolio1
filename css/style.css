@@ -164,6 +164,8 @@ main::-webkit-scrollbar-track{
     justify-content: space-evenly;
 }
 #hiddenDiv img {
+    width: auto;
+    height: auto;
     opacity: 0;
     transition: opacity 1s ease-in-out, filter 1s ease-in-out;
 }
