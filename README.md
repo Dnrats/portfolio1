@@ -1,5 +1,3 @@
-markdown
-Copy code
 # Portfolio
 
 Welcome to my portfolio! This project showcases my work and skills as a web developer, encompassing both frontend and backend development.
