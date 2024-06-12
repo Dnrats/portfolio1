@@ -53,5 +53,5 @@ Email: contact@dnrats.com
 LinkedIn: dnrats
 
 ## Acknowledgments
-I would like to thank my instructors and peers at Online Forma Pro for their support and guidance throughout my studies.
+I would like to thank my instructors and peers at Onlineformapro for their support and guidance throughout my studies.
 
